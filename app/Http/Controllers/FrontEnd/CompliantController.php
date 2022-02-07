@@ -83,22 +83,40 @@ class CompliantController extends Controller
     {
         $data = $request->all();
 
-        if($request->hasfile('files')) {
-            foreach($request->file('files') as $file)
+        
+
+        // if($request->file('file')) {
+        //     $file = $request->file('file');
+        //     $filename = time().'_'.$file->getClientOriginalName();
+   
+        //     // File upload location
+        //    // $location = 'files';
+   
+        //     // Upload file
+        //     $file->move(public_path('FileCompliant'),$filename);
+        // }
+
+// ============= Multiple File =============
+
+
+        $files = [];
+        if($request->hasfile('file'))
+         {
+            foreach($request->file('file') as $file)
             {
-                $name = $file->getClientOriginalName();
-                $file->move(public_path().'/uploads/', $name);  
-                $imgData[] = $name;  
+                $name = time().rand(1,100).'.'.$file->extension();
+                $file->move(public_path('Files'), $name);  
+                $files[] = $name;  
             }
-    
-            $data = new Image();
-            $data->name = json_encode($imgData);
-            $data->path = json_encode($imgData);
-            
-           
-            
-        }
- 
+         }
+  
+         $file= new Compliant();
+         $file->filenames = $files;
+
+        $data['file'] = $file;
+
+        dd($data);
+
         $applyedcompliant = Compliant::create($data);
 
        if ($applyedcompliant) {
@@ -108,7 +126,6 @@ class CompliantController extends Controller
        }
 
        
-
         return redirect()->back()->withSuccessMessage(__('alert.CompliantSubmit'));
    
     }

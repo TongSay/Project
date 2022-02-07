@@ -15,7 +15,7 @@ class CreateCompliantsTable extends Migration
     {
         Schema::create('compliants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            
             $table->string('name');
             $table->integer('id_loan_type');
             $table->string('email')->nullable();

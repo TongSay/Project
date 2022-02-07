@@ -51,7 +51,7 @@
                                 <div class="input-name">
                                     <label for="name" class="heading-features"> {{ __('globle.form.name') }} <strong
                                             style="color: red;">*</strong></label>
-                                    <input id="name" name="title" class="input-contact" type="text" required>
+                                    <input id="name" name="name" class="input-contact" type="text" required>
                                 </div>
                                 <div class="input-services">
                                     <label for="services" class="heading-features"> {{ __('globle.form.choose') }}
@@ -98,8 +98,18 @@
                             </div>
 
 
-
                             <div class="input-row">
+                            
+                                <div class="input-email">
+                                    <label id="email" class="heading-features">{{__('globle.form.upload')}} {{__('globle.form.cv')}}  <strong style="color: red;">*</strong></label>
+                                    <input type="file" name="file[]" multiple class="input-contact form-control" required>
+                                </div>
+                                
+                            </div>
+
+
+
+                            {{-- <div class="input-row">
 
                                 <div class="input-email">
                                     <label id="email" class="heading-features">{{ __('globle.form.upload') }}
@@ -107,14 +117,14 @@
                                             style="color: red;">*</strong></label>
                                     <input type="file" 
                             class="filepond"
-                            name="files[]"
+                            name="file"
                             multiple
                             data-max-file-size="3MB"
                             data-max-files="3" />
 
                                 </div>
 
-                            </div>
+                            </div> --}}
 
 
 
@@ -126,7 +136,7 @@
                            
 
 
-                        @section('scripts')
+                        {{-- @section('scripts')
                         <script>
                             FilePond.registerPlugin(
                             
@@ -145,11 +155,11 @@
                             
                             // Select the file input and use create() to turn it into a pond
                             FilePond.create(
-                                document.querySelector("input[name='files[]']")
+                                document.querySelector("input[name='file']")
                             );
                             </script>
 
-                        @endsection
+                        @endsection --}}
                         {{-- <input type="file" id="avatar" name="file" multiple/> --}}
                     </form>
 

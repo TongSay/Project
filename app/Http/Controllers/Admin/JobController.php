@@ -67,7 +67,7 @@ class JobController extends Controller
 
         $data['national_card'] = $filecard;
 
-       
+       dd($data);
 
         $applyedjob = ApplyJob::create($data);
 
