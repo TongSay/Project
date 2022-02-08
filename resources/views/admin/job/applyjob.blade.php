@@ -125,7 +125,7 @@
                                                                         <div class="modal-header">
                                                                             <h5 class="modal-title"
                                                                                 id="exampleModalLabel">
-                                                                                {{ $applyjob->id }}Aprovel With Message
+                                                                                Aprovel With Message
                                                                             </h5>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal" aria-label="Close">
@@ -179,7 +179,7 @@
                                                                         <div class="modal-header">
                                                                             <h5 class="modal-title"
                                                                                 id="exampleModalLabel">
-                                                                                {{ $applyjob->id }}Aprovel With Message
+                                                                                Reject With Message
                                                                             </h5>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal" aria-label="Close">
@@ -240,7 +240,7 @@
                                                                         <div class="modal-header">
                                                                             <h5 class="modal-title"
                                                                                 id="exampleModalLabel">
-                                                                                {{ $applyjob->id }} Aproved Message</h5>
+                                                                                 Aproved Message</h5>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal" aria-label="Close">
                                                                                 <span aria-hidden="true">&times;</span>
@@ -290,7 +290,7 @@
                                                                         <div class="modal-header">
                                                                             <h5 class="modal-title"
                                                                                 id="exampleModalLabel">
-                                                                                {{ $applyjob->id }} Rejected Message</h5>
+                                                                                 Rejected Message</h5>
                                                                             <button type="button" class="close"
                                                                                 data-dismiss="modal" aria-label="Close">
                                                                                 <span aria-hidden="true">&times;</span>
@@ -362,7 +362,7 @@
                                                                       <div class="modal-header">
                                                                           <h5 class="modal-title"
                                                                               id="exampleModalLabel">
-                                                                              {{ $applyjob->id }}Aprovel With Message
+                                                                              Aprovel With Message
                                                                           </h5>
                                                                           <button type="button" class="close"
                                                                               data-dismiss="modal" aria-label="Close">
@@ -416,7 +416,7 @@
                                                                       <div class="modal-header">
                                                                           <h5 class="modal-title"
                                                                               id="exampleModalLabel">
-                                                                              {{ $applyjob->id }}Aprovel With Message
+                                                                              Reject With Message
                                                                           </h5>
                                                                           <button type="button" class="close"
                                                                               data-dismiss="modal" aria-label="Close">
@@ -477,7 +477,7 @@
                                                                       <div class="modal-header">
                                                                           <h5 class="modal-title"
                                                                               id="exampleModalLabel">
-                                                                              {{ $applyjob->id }} Aproved Message</h5>
+                                                                              Aproved Message</h5>
                                                                           <button type="button" class="close"
                                                                               data-dismiss="modal" aria-label="Close">
                                                                               <span aria-hidden="true">&times;</span>
@@ -527,7 +527,7 @@
                                                                       <div class="modal-header">
                                                                           <h5 class="modal-title"
                                                                               id="exampleModalLabel">
-                                                                              {{ $applyjob->id }} Rejected Message</h5>
+                                                                               Rejected Message</h5>
                                                                           <button type="button" class="close"
                                                                               data-dismiss="modal" aria-label="Close">
                                                                               <span aria-hidden="true">&times;</span>

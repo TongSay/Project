@@ -92,9 +92,9 @@
 
                         <br>
 
-                        
-
                         {{ $viewapplyedcompliant->file }}
+
+                      
                         
                     </div>
                 </div>

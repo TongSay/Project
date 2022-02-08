@@ -105,7 +105,7 @@ class CompliantController extends Controller
             foreach($request->file('file') as $file)
             {
                 $name = time().rand(1,100).'.'.$file->extension();
-                $file->move(public_path('Files'), $name);  
+                $file->move(public_path('FileCompliant'), $name);  
                 $files[] = $name;  
             }
          }

@@ -118,7 +118,7 @@
                                                           <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                               <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }}Aprovel With Message</h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel">Aprovel With Message</h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                   <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -153,7 +153,7 @@
                                                           <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                               <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }}Aprovel With Message</h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel">Reject With Message</h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                   <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -194,7 +194,7 @@
                                                           <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                               <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }} Aproved Message</h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel">Aproved With Message</h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                   <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -229,7 +229,7 @@
                                                           <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                               <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }} Rejected Message</h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel"> Rejected With Message</h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                   <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -295,7 +295,7 @@
                                                         <div class="modal-dialog" role="document">
                                                           <div class="modal-content">
                                                             <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }}Aprovel With Message</h5>
+                                                              <h5 class="modal-title" id="exampleModalLabel">Aprovel With Messages</h5>
                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                               </button>
@@ -330,7 +330,7 @@
                                                         <div class="modal-dialog" role="document">
                                                           <div class="modal-content">
                                                             <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }}Aprovel With Message</h5>
+                                                              <h5 class="modal-title" id="exampleModalLabel">Reject With Messages</h5>
                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                               </button>
@@ -371,7 +371,7 @@
                                                         <div class="modal-dialog" role="document">
                                                           <div class="modal-content">
                                                             <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }} Aproved Message</h5>
+                                                              <h5 class="modal-title" id="exampleModalLabel"> Aproved with Messages</h5>
                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                               </button>
@@ -406,7 +406,7 @@
                                                         <div class="modal-dialog" role="document">
                                                           <div class="modal-content">
                                                             <div class="modal-header">
-                                                              <h5 class="modal-title" id="exampleModalLabel">{{ $applycompliant->id }} Rejected Message</h5>
+                                                              <h5 class="modal-title" id="exampleModalLabel">Rejected With Messages</h5>
                                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                               </button>

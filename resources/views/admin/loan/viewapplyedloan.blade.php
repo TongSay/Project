@@ -91,6 +91,23 @@
                                                     <div class="col-lg-12">
                                                         {{-- ======  Loan ======= --}}
                                                         <div class="form-group">
+                                                           <label for="loan">{{__('globle.form.amount')}}</label>
+                                                           <input disabled class="form-control @error('loan') is-invalid @enderror" name="loan" value="{{ $viewapplyedloan->amount }}"
+                                                           name="loan" type="text">
+               
+                                                           @error('loan')
+                                                           <span class="invalid-feedback" role="alert">
+                                                               <strong>{{ $message }}</strong>
+                                                           </span>
+                                                       @enderror
+                                                       </div>
+                                                   </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        {{-- ======  Loan ======= --}}
+                                                        <div class="form-group">
                                                            <label for="loan">{{__('globle.apply')}} {{__('globle.Loans')}}</label>
                                                            <input disabled class="form-control @error('loan') is-invalid @enderror" name="loan" value="{{ $viewapplyedloan->applyedloan->{'title_'.app()->getLocale()} }}"
                                                            name="loan" type="text">
