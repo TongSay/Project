@@ -115,7 +115,7 @@ class CompliantController extends Controller
 
         $data['file'] = $file;
 
-        dd($data);
+       // dd($data);
 
         $applyedcompliant = Compliant::create($data);
 
