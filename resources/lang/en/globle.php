@@ -30,6 +30,8 @@ return [
         'Update' => 'Update',
         'Select' => 'Select',
         'Action' => 'Action',
+        'Situation' => 'Situation',
+        'Print' => 'Print',
     ],
 
     'Post' => 'Posting',

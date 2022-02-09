@@ -30,6 +30,8 @@ return [
         'Back' => 'ត្រឡប់ក្រោយ',
         'Update' => 'កែសម្រួល',
         'Select' => 'ជ្រើសរើស',
+        'Situation' => 'សន្ថានភាព',
+        'Print' => 'Print',
     ],
 
 
