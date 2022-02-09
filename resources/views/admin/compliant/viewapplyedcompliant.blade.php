@@ -92,6 +92,8 @@
 
                         <br>
 
+                        
+
                         {{ $viewapplyedcompliant->file }}
 
                       
