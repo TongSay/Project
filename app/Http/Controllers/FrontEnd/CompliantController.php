@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Notifications\CompliantNotification;
 use Carbon\Carbon;
 use App\Models\Compliant;
+use App\Models\MediaCompliant;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class CompliantController extends Controller
@@ -81,7 +82,19 @@ class CompliantController extends Controller
      */
     public function storecompliant(Request $request)
     {
-        $data = $request->all();
+
+        
+        $compliants = Compliant::create([
+            'name'=>$request->get('name'),
+            'id_loan_type'=>$request->get('id_loan_type'),
+            'email'=>$request->get('email'),
+            'phone'=>$request->get('phone'),
+            'date'=>$request->get('date'),
+            'subject'=>$request->get('subject'),
+            'compliant_description'=>$request->get('compliant_description'),
+           
+
+        ]);
 
         
 
@@ -99,29 +112,48 @@ class CompliantController extends Controller
 // ============= Multiple File =============
 
 
-        $files = [];
-        if($request->hasfile('file'))
-         {
-            foreach($request->file('file') as $file)
-            {
-                $name = time().rand(1,100).'.'.$file->extension();
-                $file->move(public_path('FileCompliant'), $name);  
-                $files[] = $name;  
-            }
-         }
+        // $files = [];
+        // if($request->hasfile('file'))
+        //  {
+        //     foreach($request->file('file') as $file)
+        //     {
+        //         $name = time().rand(1,100).'.'.$file->extension();
+        //         $file->move(public_path('FileCompliant'), $name);  
+        //         $files[] = $name;  
+        //     }
+        //  }
   
-         $file= new Compliant();
-         $file->filenames = $files;
+        //  $file= new Compliant();
+        //  $file->filenames = $files;
 
-        $data['file'] = $file;
+        // $data['file'] = $file;
 
        // dd($data);
 
-        $applyedcompliant = Compliant::create($data);
+       if($request->hasFile('photos'))
+        {
+        
+            $allowedfileExtension=['pdf','jpg','png','docx'];
+            $files = $request->file('photos');
+            foreach($files as $file)
+            {
 
-       if ($applyedcompliant) {
+                $name = time().rand(1,100).'.'.$file->extension();
+                $file->move(public_path('FileCompliant'),$name);  
+                $files[] = $name;
+                
+                    MediaCompliant::create([
+                        'id_compliant' => $compliants->id,
+                        'filename' => $name
+                    ]);
+            }
+        }
 
-        $applyedcompliant->notify( new CompliantNotification($applyedcompliant));
+      
+
+       if ($compliants) {
+
+        $compliants->notify( new CompliantNotification($compliants));
 
        }
 

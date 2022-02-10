@@ -24,7 +24,6 @@ class CreateCompliantsTable extends Migration
             $table->string('subject')->nullable();
             $table->string('compliant_description')->nullable();
             $table->string('message')->nullable();
-            $table->string('file');
             $table->timestamp('read_at')->nullable();
             $table->boolean('status')->nullable();
             $table->timestamps();

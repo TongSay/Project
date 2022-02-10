@@ -26,7 +26,7 @@
                     </ol>
                 </h4>
 
-                <form class="cmxform">
+              
 
                     <div class="row">
                         <div class="col-lg-4 col-sm-4">
@@ -255,8 +255,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form
-                                                    action="{{ route('aprove-compliant.aprove',[$viewapplyedcompliant->id]) }}"
+                                                <form action="{{ route('aprove-compliant.aprove',[$viewapplyedcompliant->id]) }}"
                                                     method="POST" enctype="multipart/form-data">@csrf
                                                     {{method_field('PATCH')}}
 
@@ -426,7 +425,7 @@
                                 <fieldset>
 
 
-                                    <input class="btn btn-primary" type="submit" value="Print">
+                                    <input class="btn btn-primary" type="button" value="Print">
                                 </fieldset>
 
                             </div>
@@ -448,7 +447,7 @@
 document.querySelectorAll('fieldset').forEach(elem => 
   elem.onclick = () => print_this(elem))
                     </script>
-                </form>
+                
             </div>
         </div>
     </div>

@@ -44,8 +44,7 @@
                 <div class="col-md-12">
                     <div class="contact-right">
                         <form action="{{ route('applycompliant.storecompliant') }}" method="POST"
-                            enctype="multipart/form-data" class="form-contact-right"> @csrf
-
+                            enctype="multipart/form-data" class="form-contact-right"> @csrf 
 
                             <div class="input-row">
                                 <div class="input-name">
@@ -102,7 +101,7 @@
                             
                                 <div class="input-email">
                                     <label id="email" class="heading-features">{{__('globle.form.upload')}} {{__('globle.form.cv')}}  <strong style="color: red;">*</strong></label>
-                                    <input type="file" name="file[]" multiple class="input-contact form-control" required>
+                                    <input type="file" name="photos[]" multiple class="input-contact form-control" required>
                                 </div>
                                 
                             </div>
