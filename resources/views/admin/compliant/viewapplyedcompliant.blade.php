@@ -74,17 +74,11 @@
                                     <!-- Modal body with image -->
                                     <div class="modal-body">
                                         
-
-
-
-                                        
-
-
                                         @foreach ($files as $file )
 
                                         @if($file->id_compliant == $viewapplyedcompliant->id)
 
-                                            <div class="col-md-6">
+                                            <div class="col-lg-4 col-sm-4">
                                                 <a href="{{ asset('FileCompliant') }}/{{ $file->filename }}"
                                                 download="{{ $file->filename }}">
                                                 <img src="{{ asset('FileCompliant') }}/{{ $file->filename }}" alt="My Profile" id="output"
@@ -98,13 +92,6 @@
                                         
                                             
                                         @endforeach
-
-                                        
-
-                                     
-
-                                        
-                                        
 
 
                                     </div>

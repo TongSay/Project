@@ -61,7 +61,7 @@
                                             style="color: red;">*</strong></label>
                                             <select class="input-contact input-select" name="id_loan" id="services" required="">
 
-                                                <option>{{__('globle.form.choose')}} {{__('sidebar.loan')}}</option>
+                                                <option disabled="disabled">{{__('globle.form.choose')}} {{__('sidebar.loan')}}</option>
         
                                                 @foreach(App\Models\Loan::all() as $loan)
                                                     <option value="{{$loan->id}}">{{ $loan->{'title_'.app()->getLocale()} }}</option>
@@ -104,7 +104,7 @@
                                             style="color: red;">*</strong></label>
                                     <select class="input-contact input-select" name="gender" id="services">
 
-                                        <option>Choose</option>
+                                        <option disabled="disabled">Choose</option>
 
                                         @foreach(App\Models\Gender::all() as $gender)
                                             <option value="{{$gender->id}}">{{ $gender->name }}</option>
@@ -137,6 +137,97 @@
                                 <input type="text" name="pob" class="input-contact" placeholder="#123, St.123,..."
                                     required>
                             </div>
+
+
+
+
+                            <div class="col-md-6">
+                                <div style="display: none">
+                                <input id="pac-input"
+                                  class="form-control mt-2"
+                                  type="text" name="corrent"
+                                  placeholder="Corrent Adress"
+                                />
+                              </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div  id="map"></div>
+                              </div>
+
+
+
+
+                              
+  
+  <script>
+    (() => {
+      "use strict";
+      var e = {
+          d: (t, o) => {
+            for (var n in o)
+              e.o(o, n) &&
+                !e.o(t, n) &&
+                Object.defineProperty(t, n, { enumerable: !0, get: o[n] });
+          },
+          o: (e, t) => Object.prototype.hasOwnProperty.call(e, t),
+          r: (e) => {
+            "undefined" != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, {
+                value: "Module",
+              }),
+              Object.defineProperty(e, "__esModule", { value: !0 });
+          },
+        },
+        t = {};
+      function o() {
+        const e = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 13.5066394, lng: 104.869423 },
+            zoom: 6,
+          }),
+          t = document.getElementById("pac-input"),
+          o = new google.maps.places.Autocomplete(t, {
+            fields: ["place_id", "geometry", "formatted_address", "name"],
+          });
+        o.bindTo("bounds", e),
+          e.controls[google.maps.ControlPosition.TOP_LEFT].push(t);
+        const n = new google.maps.InfoWindow(),
+          a = document.getElementById("infowindow-content");
+        n.setContent(a);
+        const d = new google.maps.Marker({ map: e });
+        d.addListener("click", () => {
+          n.open(e, d);
+        }),
+          o.addListener("place_changed", () => {
+            n.close();
+            const t = o.getPlace();
+            t.geometry &&
+              t.geometry.location &&
+              (t.geometry.viewport
+                ? e.fitBounds(t.geometry.viewport)
+                : (e.setCenter(t.geometry.location), e.setZoom(17)),
+              d.setPlace({
+                placeId: t.place_id,
+                location: t.geometry.location,
+              }),
+              d.setVisible(!0),
+              (a.children.namedItem("place-name").textContent = t.name),
+              (a.children.namedItem("place-id").textContent = t.place_id),
+              (a.children.namedItem("place-address").textContent =
+                t.formatted_address),
+              n.open(e, d));
+          });
+      }
+      e.r(t), e.d(t, { initMap: () => o });
+      var n = window;
+      for (var a in t) n[a] = t[a];
+      t.__esModule && Object.defineProperty(n, "__esModule", { value: !0 });
+    })();
+  </script>
+
+
+
+
 
                             <div class="input-message">
                                 <label for="message" class="heading-features"> {{__('globle.form.message')}} </label>

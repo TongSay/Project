@@ -140,6 +140,16 @@
 <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
 
 @yield('scripts')
+
+
+
+
+
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places&v=weekly"
+async
+></script>
 </body>
 
 </html>

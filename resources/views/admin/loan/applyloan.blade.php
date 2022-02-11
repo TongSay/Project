@@ -80,7 +80,7 @@
                                     <th class="py-6">{{ __('globle.Name') }} {{ __('sidebar.loan') }}</th>
 
                                     <th class="py-6">{{ __('globle.Name') }}</th>
-                                    <th class="py-6">{{ __('globle.Email') }}</th>
+                                    <th class="py-6">{{ __('globle.form.amount') }}</th>
                                     <th class="py-6">{{ __('globle.Phone') }}</th>
                                     {{-- <th class="py-6">{{__('globle.Description')}}</th> --}}
                                     <th class="no-sort py-6">{{ __('globle.Action.Situation') }}</th>
@@ -96,11 +96,11 @@
                                     <td>{{ $applyloan->applyedloan->{'title_' . app()->getLocale()} }}</td>
                                     <td>{{ $applyloan->name }}</td>
                                     <td>
-                                        @if ($applyloan->email == null)
-                                        No Email to Disply
+                                        @if ($applyloan->amount)
+                                        No amount to require!
 
                                         @else
-                                        {{ $applyloan->email }}
+                                        {{ $applyloan->amount }}
                                         @endif
                                     </td>
                                     <td>0{{ $applyloan->phone }}</td>
@@ -318,10 +318,10 @@
                                     <td>{{ $applyloan->name }}</td>
                                     <td>
                                         @if ($applyloan->email == null)
-                                        No Email to Disply
+                                        No amount to require!
 
                                         @else
-                                        {{ $applyloan->email }}
+                                        {{ $applyloan->amount }}
                                         @endif
                                     </td>
                                     <td>0{{ $applyloan->phone }}</td>

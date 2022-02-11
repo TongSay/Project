@@ -114,9 +114,9 @@
                                     <label id="email" class="heading-features">{{ __('globle.form.upload') }}
                                         {{ __('globle.form.your') }} {{ __('globle.form.document') }} <strong
                                             style="color: red;">*</strong></label>
-                                    <input type="file" 
+                                    <input type="file" id="files" 
                             class="filepond"
-                            name="file"
+                            name="photos[]"
                             multiple
                             data-max-file-size="3MB"
                             data-max-files="3" />
@@ -154,7 +154,7 @@
                             
                             // Select the file input and use create() to turn it into a pond
                             FilePond.create(
-                                document.querySelector("input[name='file']")
+                                document.querySelector("input[id='files']")
                             );
                             </script>
 

@@ -43,6 +43,11 @@
 
 <!-- Multple File Upload -->
 
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
   <!-- Filepond stylesheet -->
 
 
@@ -50,7 +55,7 @@
 <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css" rel="stylesheet">
 
     @if(app()->getLocale() == 'en')
-    <style>
+    <style  type="text/css">
       @font-face {
   font-family: "feather";
   src: url(../../fonts/khmer-font/Normal/Siemreap-Regular.ttf);
@@ -61,11 +66,35 @@
   url('../fonts/feather.svg?t=1525787366991#feather') format('svg'); /* iOS 4.1- */
 }
 
+
+      /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+     #map {
+      
+      height: 400px;
+    }
+
+    .controls:focus {
+      border-color: #4d90fe;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    #infowindow-content {
+      display: none;
+    }
+
+    #map #infowindow-content {
+      display: inline;
+    }
+
     </style>
   @endif
 
   @if(app()->getLocale() == 'kh')
-    <style>
+    <style  type="text/css">
       @font-face {
         font-family: khmerFOnt;
         
@@ -80,8 +109,35 @@
 		
       }
 
+
+      /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      
+      height: 400px;
+    }
+
+    
+
+    .controls:focus {
+      border-color: #4d90fe;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    #infowindow-content {
+      display: none;
+    }
+
+    #map #infowindow-content {
+      display: inline;
+    }
+
     </style>
   @endif
+
 
 
 </head>
