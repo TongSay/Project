@@ -73,18 +73,38 @@
 
                                     <!-- Modal body with image -->
                                     <div class="modal-body">
-                                        <a href="{{ asset('FileCompliant') }}/{{ $viewapplyedcompliant->file }}"
-                                            download="{{ $viewapplyedcompliant->file }}">
-                                            <img src="{{ asset('CV') }}/cv.jpg" alt="My Profile" id="output"
-                                                style="width: 220px; height: 150px; object-fit: cover; border-radius: 15px;" />
-                                        </a>
-
-                                        <br>
+                                        
 
 
 
-                                        {{ $viewapplyedcompliant->file }}
+                                        
 
+
+                                        @foreach ($files as $file )
+
+                                        @if($file->id_compliant == $viewapplyedcompliant->id)
+
+                                            <div class="col-md-6">
+                                                <a href="{{ asset('FileCompliant') }}/{{ $file->filename }}"
+                                                download="{{ $file->filename }}">
+                                                <img src="{{ asset('FileCompliant') }}/{{ $file->filename }}" alt="My Profile" id="output"
+                                                    style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 5px 5px 25px gray" />
+                                                </a>
+
+                                            </div>
+                                            
+                                            <br>
+                                        @endif
+                                        
+                                            
+                                        @endforeach
+
+                                        
+
+                                     
+
+                                        
+                                        
 
 
                                     </div>

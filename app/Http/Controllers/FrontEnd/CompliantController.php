@@ -31,6 +31,9 @@ class CompliantController extends Controller
 
             $viewapplyedcompliant = Compliant::find($id);
 
+            
+            $files = MediaCompliant::all();
+
             $date = Carbon::now();
 
            
@@ -42,7 +45,7 @@ class CompliantController extends Controller
 
         
 
-        return view('admin.compliant.viewapplyedcompliant', compact('viewapplyedcompliant'));
+        return view('admin.compliant.viewapplyedcompliant', compact('viewapplyedcompliant','files'));
     }
 
     public function applycompliant()
