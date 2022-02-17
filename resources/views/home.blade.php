@@ -191,12 +191,11 @@
                 </div>
                 <div class="row">
                   <div class="col-6 col-md-12 col-xl-5">
-                    <h3 class="mb-2">{{ $compliantCount->count() }}</h3>
+                    
+                    <h4 class="mb-2 text-danger">{{__('globle.new')}}: {{  $compliantCountNew->count()}}</h4>
                     <div class="d-flex align-items-baseline">
-                      <p class="text-success">
-                        <span>+3.3%</span>
-                        <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-                      </p>
+                      <h5 class="text-primary">{{__('globle.total')}}: {{ $compliantCount->count() }}</h5>
+                      
                     </div>
                   </div>
                   <div class="col-6 col-md-12 col-xl-7">
@@ -230,16 +229,20 @@
                     </div>
                   </div>
                 </div>
+
+                
                 <div class="row">
+
                   <div class="col-6 col-md-12 col-xl-5">
-                    <h3 class="mb-2">{{ $applyjobCount->count() }}</h3>
+                    
+                    <h4 class="mb-2 text-danger">{{__('globle.new')}}: {{   $applyjobCountNew->count()}}</h4>
                     <div class="d-flex align-items-baseline">
-                      <p class="text-danger">
-                        <span>-2.8%</span>
-                        <i data-feather="arrow-down" class="icon-sm mb-1"></i>
-                      </p>
+                      <h5 class="text-primary">{{__('globle.total')}}: {{ $applyjobCount->count() }} </h5>
+                      
                     </div>
                   </div>
+
+                  
                   <div class="col-6 col-md-12 col-xl-7">
                     <div id="apexChart2" class="mt-md-3 mt-xl-0"></div>
                   </div>
@@ -272,15 +275,18 @@
                   </div>
                 </div>
                 <div class="row">
+
+
                   <div class="col-6 col-md-12 col-xl-5">
-                    <h3 class="mb-2">{{ $applyloanCount->count() }}</h3>
+                    
+                    <h4 class="mb-2 text-danger">{{__('globle.new')}}: {{   $applyloanCountNew->count()}}</h4>
                     <div class="d-flex align-items-baseline">
-                      <p class="text-success">
-                        <span>+2.8%</span>
-                        <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-                      </p>
+                      <h5 class="text-primary">{{__('globle.total')}}: {{ $applyloanCount->count() }} </h5>
+                      
                     </div>
                   </div>
+
+                  
                   <div class="col-6 col-md-12 col-xl-7">
                     <div id="apexChart3" class="mt-md-3 mt-xl-0"></div>
                   </div>

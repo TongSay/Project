@@ -8,6 +8,8 @@ use App\Notifications\ApplyLoanNotification;
 use App\Models\ApplyLoan;
 use Carbon\Carbon;
 use App\Models\Loan;
+
+use DB;
 use RealRashid\SweetAlert\Facades\Alert;
 class ApplyLoanController extends Controller
 {
@@ -27,13 +29,33 @@ class ApplyLoanController extends Controller
     {
         $title = 'Apply Loan';
 
+        $countries = DB::table("countries")->pluck("name","id");
+
         if (session('success_message'))
         {
             Alert::success('Success!', session('success_message'));
         }
         
-        return view('frontend.product.applyotherloan',compact('title'));
+        return view('frontend.product.applyotherloan',compact('title','countries'));
     }
+
+
+    public function getState(Request $request)
+	{
+		$states = DB::table("states")
+		->where("country_id",$request->country_id)
+		->pluck("name","id");
+		return response()->json($states);
+	}
+
+	public function getCity(Request $request)
+	{
+		$cities = DB::table("cities")
+		->where("state_id",$request->state_id)
+		->pluck("name","id");
+		return response()->json($cities);
+	}
+
 
     public function storeapplyotherloan(Request $request)
    {

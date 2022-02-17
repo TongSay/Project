@@ -21,6 +21,10 @@ return [
     'File' => 'File',
     'Cover' => 'Cover',
     'Welcome_to' => 'Welcome to',
+
+    'total' => 'Total',
+    'new' => 'New',
+
     'Action' => [
         'Edit' => "Edit",
         'Delete' => 'Delete',

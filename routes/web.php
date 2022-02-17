@@ -57,6 +57,12 @@ Route::get('/product/{id}', [App\Http\Controllers\FrontEnd\ProductController::cl
 
 Route::get('applyotherloan', [App\Http\Controllers\Admin\ApplyLoanController::class, 'applyotherloan'])->name('applyotherloan');
 
+Route::get('getState', [App\Http\Controllers\Admin\ApplyLoanController::class, 'getState'])->name('getState');
+
+Route::get('getCity', [App\Http\Controllers\Admin\ApplyLoanController::class, 'getCity'])->name('getCity');
+
+
+
 Route::post('applyotherloanid', [App\Http\Controllers\Admin\ApplyLoanController::class, 'storeapplyotherloan'])->name('applyotherloanid.storeapplyotherloan');
 
 Route::get('applyloan/{id}', [App\Http\Controllers\Admin\ApplyLoanController::class, 'applyloan'])->name('applyloan');

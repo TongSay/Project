@@ -32,19 +32,25 @@ class HomeController extends Controller
     
         $compliantCount = Compliant::all();
 
+        $compliantCountNew = Compliant::where('read_at', '=', null)->get();
+
         $applycompliants = Compliant::latest()->paginate(7);
 
         $applyjobCount = ApplyJob::all();
+
+        $applyjobCountNew = ApplyJob::where('read_at', '=', null)->get();
 
         $applyjobs = ApplyJob::latest()->paginate(7);
 
         $applyloanCount = ApplyLoan::all();
 
+        $applyloanCountNew = ApplyLoan::where('read_at', '=', null)->get();
+
         $applyloan = ApplyLoan::latest()->paginate(7);
 
        
 
-        return view('home', compact('posts','newsCount','jobCount','loanCount','compliantCount','applyjobCount','applyloanCount','applyloan','applyjobs','applycompliants',));
+        return view('home', compact('posts','newsCount','jobCount','loanCount','compliantCount','applyjobCount','applyloanCount','applyloan','applyjobs','applycompliants','compliantCountNew','applyjobCountNew','applyloanCountNew'));
     }
 
 
