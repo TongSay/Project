@@ -141,7 +141,7 @@
 
 
                             <div class="input-email">
-                                <label for="message" class="heading-features"> {{__('globle.form.City')}} <strong
+                                <label for="message" class="heading-features"> {{__('globle.form.current_address')}} <strong
                                         style="color: red;">*</strong></label>
                                 <select id="country" name="category_id" class="input-contact input-select">
                                     <option value="" selected disabled>Select City</option>
