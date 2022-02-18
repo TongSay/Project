@@ -33,10 +33,11 @@ class ApplyLoanController extends Controller
 
         // $countries = DB::table("countries")->pluck("name","id");
 
-        $countries = DB::table("address")->
-        orderBy('id_county')->get()->groupBy(function($data) {
-            return $data->county;
-        });
+        foreach($countries as $country){
+            $groups[$cat->cat_id] = DB::table('Products')->where('cat_id', $cat->cat_id)->get();
+        }
+
+        
         if (session('success_message'))
         {
             Alert::success('Success!', session('success_message'));
@@ -47,24 +48,22 @@ class ApplyLoanController extends Controller
 
 
 
-    // public function getState(Request $request)
-	// {
+    public function getState(Request $request)
+	{
 
-        
+		$states = DB::table("states")
+		->where("country_id",$request->country_id)
+		->pluck("name","id");
+		return response()->json($states);
+	}
 
-	// 	$states = DB::table("states")
-	// 	->where("country_id",$request->country_id)
-	// 	->pluck("name","id");
-	// 	return response()->json($states);
-	// }
-
-	// public function getCity(Request $request)
-	// {
-	// 	$cities = DB::table("cities")
-	// 	->where("state_id",$request->state_id)
-	// 	->pluck("name","id");
-	// 	return response()->json($cities);
-	// }
+	public function getCity(Request $request)
+	{
+		$cities = DB::table("cities")
+		->where("state_id",$request->state_id)
+		->pluck("name","id");
+		return response()->json($cities);
+	}
 
 
     public function storeapplyotherloan(Request $request)
