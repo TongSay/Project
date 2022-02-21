@@ -144,16 +144,12 @@
 
                             <div class="row">
                                 <div class="col-lg-12">
-                                    {{-- ====== dob ======= --}}
+                                    
                                     <div class="form-group">
                                         <label>{{ __('globle.form.date') }}</label>
                                         <input disabled class="form-control @error('dob') is-invalid @enderror"
-                                            value="{{ $viewapplyedcompliant->date }}" id="dob" name="dob" type="date">
-                                        @error('dob')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                            value="{{ $viewapplyedcompliant->created_at->format('d-M-Y') }}" id="dob" name="dob" type="text">
+                                        
                                     </div>
                                 </div>
                             </div>

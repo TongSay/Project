@@ -18,25 +18,29 @@ class ApplyLoanController extends Controller
         $title = 'Apply Loan';
         $loan = Loan::find($id);
 
+        $countries = DB::table('locations')->orderBy('province')->get()->groupBy(function($item) {
+            return $item->province;
+        });
+
         if (session('success_message'))
         {
             Alert::success('Success!', session('success_message'));
         }
-         return view('frontend.product.applyloan',compact('loan','title'));
+         return view('frontend.product.applyloan',compact('loan','title','countries'));
     }
 
     public function applyotherloan(Request $request)
     {
         $title = 'Apply Loan'; 
         
-       
+        $countries = DB::table('locations')->orderBy('province')->get()->groupBy(function($item) {
+            return $item->province;
+        });
 
         // $countries = DB::table("countries")->pluck("name","id");
 
-        foreach($countries as $country){
-            $groups[$cat->cat_id] = DB::table('Products')->where('cat_id', $cat->cat_id)->get();
-        }
-
+      //  $grouped = DB::table("address");
+       // $countries = $grouped->groupBy('id_country');
         
         if (session('success_message'))
         {

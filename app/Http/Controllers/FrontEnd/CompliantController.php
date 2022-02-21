@@ -92,7 +92,7 @@ class CompliantController extends Controller
             'id_loan_type'=>$request->get('id_loan_type'),
             'email'=>$request->get('email'),
             'phone'=>$request->get('phone'),
-            'date'=>$request->get('date'),
+            // 'date'=>$request->get('date'),
             'subject'=>$request->get('subject'),
             'compliant_description'=>$request->get('compliant_description'),
            

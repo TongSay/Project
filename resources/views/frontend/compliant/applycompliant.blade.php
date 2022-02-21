@@ -77,11 +77,11 @@
                                     <input type="text" name="phone" class="input-contact" required maxlength="10">
                                 </div>
                             </div>
-                            <div class="input-message">
+                            {{-- <div class="input-message">
                                 <label for="message" class="heading-features"> {{ __('globle.form.date') }} <strong
                                         style="color: red;">*</strong></label>
                                 <input type="date" name="date" class="input-contact" required>
-                            </div>
+                            </div> --}}
 
                             <div class="input-message">
                                 <label for="message" class="heading-features"> {{ __('globle.form.subject') }} <strong

@@ -20,7 +20,7 @@ class CreateCompliantsTable extends Migration
             $table->integer('id_loan_type');
             $table->string('email')->nullable();
             $table->integer('phone');
-            $table->date('date');
+            // $table->date('date');
             $table->string('subject')->nullable();
             $table->string('compliant_description')->nullable();
             $table->string('message')->nullable();

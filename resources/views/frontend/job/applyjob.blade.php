@@ -62,7 +62,7 @@
                                 <label for="message" class="heading-features"> {{__('globle.form.position')}} <strong style="color: red;">*</strong></label>
                                
                                     
-                                    <input type="text" name="job_name" class="input-contact" value="{{ $job->{'title_'.app()->getLocale()} }}">
+                                    <input type="text" disabled class="input-contact" value="{{ $job->{'title_'.app()->getLocale()} }}">
                                
                             </div>
                             <div class="input-services">
@@ -80,7 +80,7 @@
                             <div class="input-services">
                                 <label for="services" class="heading-features">{{__('globle.form.gender')}} <strong style="color: red;">*</strong></label>
                                 <select class="input-contact input-select" name="gender" id="services">
-                                    <option>{{__('globle.form.choose')}}</option>
+                                    
                                     @foreach(App\Models\Gender::all() as $gender)
                                     <option value="{{$gender->id}}">{{$gender->name}}</option>
                                     @endforeach

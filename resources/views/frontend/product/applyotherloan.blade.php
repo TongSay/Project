@@ -141,35 +141,41 @@
 
 
                             <div class="input-email">
-                                <label for="message" class="heading-features"> {{__('globle.form.current_address')}} <strong
-                                        style="color: red;">*</strong></label>
-                                <select id="country" name="category_id" class="input-contact input-select">
+                                <label for="message" class="heading-features"> {{__('globle.form.current_address')}}
+                                    <strong style="color: red;">*</strong></label>
+                                <select id="country" name="pob" class="input-contact input-select">
                                     <option value="" selected disabled>Select City</option>
-                                    @foreach($countries as $key => $country)
-                                    <option value="{{$key}}"> {{$country}}</option>
+                                    @foreach ( $countries as $key=>$country){
+                                    <option value="{{$key}}">
+
+                                        {{-- {{ $country[0]->vallage }} --}}
+                                        {{ $country[0]->province }}
+
+
+                                    </option> }
                                     @endforeach
                                 </select>
                             </div>
 
-                            
 
-                            <div class="input-services">
+
+                            {{-- <div class="input-services">
                                 <label for="message" class="heading-features"> {{__('globle.form.District')}} <strong
                                         style="color: red;">*</strong></label>
                                 <select name="state" id="state" class="input-contact input-select"></select>
                             </div>
-                            
+
                             <div class="input-services">
                                 <label for="message" class="heading-features"> {{__('globle.form.Commune')}} <strong
                                         style="color: red;">*</strong></label>
-                                        <select name="city" id="city" class="input-contact input-select"></select>
+                                <select name="city" id="city" class="input-contact input-select"></select>
                             </div>
 
                             <div class="input-services">
                                 <label for="message" class="heading-features"> {{__('globle.form.village')}} <strong
                                         style="color: red;">*</strong></label>
-                                        <select name="city" id="city" class="input-contact input-select"></select>
-                            </div>
+                                <select name="city" id="city" class="input-contact input-select"></select>
+                            </div> --}}
 
 
 
@@ -178,9 +184,9 @@
                                 <label for="city">Commune:</label>
                                 <select name="city" id="city" class="form-control"></select>
                             </div> --}}
-                        
-                        <script type=text/javascript>
-                            $('#country').change(function(){
+
+                            <script type=text/javascript>
+                                $('#country').change(function(){
                             var countryID = $(this).val();  
                             if(countryID){
                               $.ajax({
@@ -228,45 +234,45 @@
                             }
                               
                             });
-                        </script>
+                            </script>
 
 
+                        </div>
+
+
+
+
+                        <div class="input-message">
+                            <label for="message" class="heading-features"> {{__('globle.form.message')}} </label>
+                            <textarea name="message" class="input-contact-message" id="message"></textarea>
+                        </div>
+
+
+                        <div class="input-row">
+
+                            <div class="input-email">
+                                <label id="email" class="heading-features">{{__('globle.form.upload')}}
+                                    {{__('globle.form.nidc')}} <strong style="color: red;">*</strong>
+                                </label>
+                                <input type="file" name="national_card" class="input-contact form-control" required>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="button">
+                            <button type="submit" class=" btn btn-left">Submit</button>
+                        </div>
+                    </form>
                 </div>
-
-              
-
-
-                    <div class="input-message">
-                        <label for="message" class="heading-features"> {{__('globle.form.message')}} </label>
-                        <textarea name="message" class="input-contact-message" id="message"></textarea>
-                    </div>
-               
-
-                <div class="input-row">
-
-                    <div class="input-email">
-                        <label id="email" class="heading-features">{{__('globle.form.upload')}}
-                            {{__('globle.form.nidc')}} <strong style="color: red;">*</strong>
-                        </label>
-                        <input type="file" name="national_card" class="input-contact form-control" required>
-                    </div>
-
-                </div>
-
-                
-
-                
-                <div class="button">
-                    <button type="submit" class=" btn btn-left">Submit</button>
-                </div>
-                </form>
             </div>
+
+
+
+
         </div>
-
-
-
-
-    </div>
 
     </div>
 </section>
