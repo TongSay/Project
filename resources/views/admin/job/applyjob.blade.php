@@ -81,6 +81,7 @@
                                         <th class="py-6">{{ __('globle.Name') }}</th>
                                         <th class="py-6">{{ __('globle.Email') }}</th>
                                         <th class="py-6">{{ __('globle.Phone') }}</th>
+                                        <th class="py-6">{{__('globle.Date')}}</th>
                                         {{-- <th class="py-6">{{__('globle.Description')}}</th> --}}
                                         <th class="no-sort py-6">{{ __('globle.Action.Situation') }}</th>
                                         <th class="no-sort py-6">{{ __('globle.Action.Action') }}</th>
@@ -104,6 +105,8 @@
                                                         @endif
                                                     </td>
                                                     <td>0{{ $applyjob->phone }}</td>
+
+                                                    <td>{{ $applyjob->created_at->format('d-m-Y') }}</td>
 
                                                     <td>
                                                         @if ($applyjob->status == null)
@@ -342,6 +345,7 @@
                                                     <td>{{ $applyjob->name }}</td>
                                                     <td>{{ $applyjob->email }}</td>
                                                     <td>0{{ $applyjob->phone }}</td>
+                                                    <td>{{ $applyjob->created_at->format('d-m-Y') }}</td>
                                                     <td>
                                                       @if ($applyjob->status == null)
 

@@ -19,12 +19,15 @@ class GenderSeeder extends Seeder
         $genders = [
             [
                 'id'    => 1,
-                'name'  => 'Male',
+                'title_en'  => 'Male',
+                'title_kh'  => 'ប្រុស',
 
             ],
             [
                 'id'    => 2,
-                'name'  => 'Female',
+               
+                'title_en'  => 'Female',
+                'title_kh'  => 'ស្រី',
                 
             ],
         ];

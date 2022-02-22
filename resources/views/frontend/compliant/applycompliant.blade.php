@@ -55,8 +55,10 @@
                                 <div class="input-services">
                                     <label for="services" class="heading-features"> {{ __('globle.form.choose') }}
                                         {{ __('menu.product') }}
-                                        <strong style="color: red;">*</strong></label>
+                                       </label>
                                     <select class="input-contact input-select" name="id_loan_type" id="services">
+                                        <option  value="">{{ __('globle.form.choose') }}
+                                            {{ __('menu.product') }}</option>
                                         @foreach (App\Models\LoanType::all() as $loantype)
                                             <option value="{{ $loantype->id }}">
                                                 {{ $loantype->{'title_' . app()->getLocale()} }}</option>

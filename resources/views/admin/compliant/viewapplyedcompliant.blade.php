@@ -130,7 +130,11 @@
                                         <label for="job">{{ __('globle.Types') }} {{ __('globle.Loans') }}</label>
                                         <input disabled class="form-control @error('job') is-invalid @enderror"
                                             name="job"
-                                            value="{{ $viewapplyedcompliant->loantype->{'title_' . app()->getLocale()} }}"
+                                            value="@if ($viewapplyedcompliant->loantype)
+                                            {{ $viewapplyedcompliant->loantype->{'title_' . app()->getLocale()} }}
+                                          @else
+                                            Unknow 
+                                          @endif"
                                             name="job" type="text">
 
                                         @error('job')

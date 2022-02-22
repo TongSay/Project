@@ -82,7 +82,7 @@
                                 <select class="input-contact input-select" name="gender" id="services">
                                     
                                     @foreach(App\Models\Gender::all() as $gender)
-                                    <option value="{{$gender->id}}">{{$gender->name}}</option>
+                                    <option value="{{$gender->id}}">{{ $gender->{'title_' . app()->getLocale()} }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="input-message">
                             <label for="message" class="heading-features"> {{__('globle.form.current_address')}} <strong style="color: red;">*</strong></label>
-                            <input type="text" name="pob" class="input-contact" placeholder="#123, St.123, Vellage, Commonune, Districe, City." required>
+                            <input type="text" name="pob" class="input-contact"  required>
                         </div>
 
                         <div class="input-message">

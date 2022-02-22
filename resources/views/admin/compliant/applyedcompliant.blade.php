@@ -93,7 +93,13 @@
                                             @if ($applycompliant->read_at == null)
                                                 <tr style="background: rgba(170, 170, 170, 0.658);">
                                                     <td>{{ $key + 1 }}</td>
-                                                    <td>{{ $applycompliant->loantype->{'title_' . app()->getLocale()} }}
+                                                    <td>
+                                                      @if ($applycompliant->loantype)
+                                                        {{ $applycompliant->loantype->{'title_' . app()->getLocale()} }}
+                                                      @else
+                                                        Unknow 
+                                                      @endif
+                                                      
                                                     </td>
                                                     <td>{{ $applycompliant->name }}</td>
                                                     <td>

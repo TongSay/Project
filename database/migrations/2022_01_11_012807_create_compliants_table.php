@@ -17,7 +17,7 @@ class CreateCompliantsTable extends Migration
             $table->bigIncrements('id');
             
             $table->string('name');
-            $table->integer('id_loan_type');
+            $table->integer('id_loan_type')->nullable();
             $table->string('email')->nullable();
             $table->integer('phone');
             // $table->date('date');
