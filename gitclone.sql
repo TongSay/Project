@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2022 at 03:52 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Feb 22, 2022 at 10:37 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,7 +88,8 @@ INSERT INTO `apply_jobs` (`id`, `id_job`, `other_job`, `name`, `gender`, `email`
 (10, 10, NULL, 'So Da', 2, NULL, 156323213, '1999-02-02', 'Takoe', NULL, '1643338898_vue.jpg', NULL, NULL, '2022-01-27 20:01:38', '2022-02-08 21:39:00', 1, 'Yes'),
 (11, 10, NULL, 'Beat', 2, NULL, 156323213, '1999-02-01', 'Takoe', NULL, '1643339060_Flat-logo-envato-Clipart-PNG.png', NULL, NULL, '2022-01-27 20:04:20', '2022-02-08 21:03:10', 1, NULL),
 (12, 12, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, '2022-02-21', 'phnom penh', NULL, '1645410944_SizeProduct.jpg', '1645410944_SizeProduct.jpg', NULL, '2022-02-20 19:35:44', '2022-02-20 19:35:44', NULL, NULL),
-(13, 12, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, '2022-02-22', 'phnom penh', NULL, '1645410974_slide1.jpg', NULL, NULL, '2022-02-20 19:36:14', '2022-02-20 19:36:14', NULL, NULL);
+(13, 12, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, '2022-02-22', 'phnom penh', NULL, '1645410974_slide1.jpg', NULL, NULL, '2022-02-20 19:36:14', '2022-02-20 19:36:14', NULL, NULL),
+(14, 11, NULL, 'Besy', 2, NULL, 112122111, '2022-02-09', 'Phnom Penh', NULL, '1645517596_139862382_469044111151778_5524384465676293045_n.jpg', NULL, '2022-02-22 01:23:40', '2022-02-22 01:13:16', '2022-02-22 01:23:40', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,8 @@ INSERT INTO `apply_loans` (`id`, `id_loan`, `loan_purpose`, `name`, `gender`, `e
 (19, 4, NULL, 'Besy', 2, 'admin@borribo.com.kh', 112122111, '333', '333', '1645065426_Report.jpg', '2022-02-16 19:37:20', '2022-02-16 19:37:06', '2022-02-16 19:37:20', 1333, NULL, NULL),
 (20, 3, NULL, 'tong say', 2, 'tongsay2019@gmail.com', 70891667, 'កណ្ដាល', NULL, '1645409127_Micro Loan.jpg', '2022-02-20 19:06:49', '2022-02-20 19:05:27', '2022-02-20 19:06:49', 200, NULL, NULL),
 (21, 6, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, 'ព្រះសីហនុ', NULL, '1645409790_Micro Loan.jpg', '2022-02-20 19:16:41', '2022-02-20 19:16:30', '2022-02-20 19:16:41', 600, NULL, NULL),
-(22, 1, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, 'កំពត', NULL, '1645411055_SizeProduct.jpg', NULL, '2022-02-20 19:37:35', '2022-02-20 19:37:35', 200, NULL, NULL);
+(22, 1, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, 'កំពត', NULL, '1645411055_SizeProduct.jpg', NULL, '2022-02-20 19:37:35', '2022-02-20 19:37:35', 200, NULL, NULL),
+(23, 3, NULL, 'Besy', 2, 'admin@borribo.com.kh', 112122111, 'ភ្នំពេញ', NULL, '1645517054_Progress.jpg', '2022-02-22 01:20:29', '2022-02-22 01:04:14', '2022-02-22 01:20:29', 200, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -154,7 +156,7 @@ CREATE TABLE `cities` (
 CREATE TABLE `compliants` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_loan_type` int(11) NOT NULL,
+  `id_loan_type` int(11) DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` int(11) NOT NULL,
   `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -180,7 +182,10 @@ INSERT INTO `compliants` (`id`, `name`, `id_loan_type`, `email`, `phone`, `subje
 (36, 'Say Tong', 4, NULL, 156323213, 'tt', 'tt', '2022-02-10 20:58:12', '2022-02-10 20:57:54', '2022-02-10 20:58:12', NULL, NULL),
 (37, 'tt', 3, NULL, 112122111, 'tttt', 'ttt', NULL, '2022-02-16 19:13:03', '2022-02-16 19:13:03', NULL, NULL),
 (38, 'Besy', 3, NULL, 112122111, 'Ttt', 'ttt', '2022-02-20 19:23:59', '2022-02-16 19:36:24', '2022-02-20 19:23:59', NULL, NULL),
-(39, 'tong say', 4, 'tongsay2019@gmail.com', 70891667, 'ddd', 'ddd', '2022-02-20 19:30:37', '2022-02-20 19:21:17', '2022-02-20 19:30:37', NULL, NULL);
+(39, 'tong say', 4, 'tongsay2019@gmail.com', 70891667, 'ddd', 'ddd', '2022-02-20 19:30:37', '2022-02-20 19:21:17', '2022-02-20 19:30:37', NULL, NULL),
+(40, 'Besy', 1, NULL, 112122111, 'tt', 'tt', '2022-02-22 01:25:26', '2022-02-22 01:07:49', '2022-02-22 01:25:26', NULL, NULL),
+(41, 'Reaksa', 1, NULL, 112122111, 'no', 'no', NULL, '2022-02-22 01:40:41', '2022-02-22 01:40:41', NULL, NULL),
+(42, 'Phanit', NULL, NULL, 112122111, 'dd', 'dd', '2022-02-22 01:47:47', '2022-02-22 01:43:31', '2022-02-22 01:47:47', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -249,18 +254,19 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `genders` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title_en` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `title_kh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `genders`
 --
 
-INSERT INTO `genders` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Male', NULL, NULL),
-(2, 'Female', NULL, NULL);
+INSERT INTO `genders` (`id`, `title_en`, `created_at`, `updated_at`, `title_kh`) VALUES
+(1, 'Male', NULL, NULL, 'ប្រុស'),
+(2, 'Female', NULL, NULL, 'ស្រី');
 
 -- --------------------------------------------------------
 
@@ -16563,7 +16569,12 @@ INSERT INTO `media_compliants` (`id`, `id_compliant`, `filename`, `created_at`, 
 (17, 37, '164506398387.jpg', '2022-02-16 19:13:03', '2022-02-16 19:13:03'),
 (18, 38, '164506538451.jpg', '2022-02-16 19:36:24', '2022-02-16 19:36:24'),
 (19, 38, '164506538432.jpg', '2022-02-16 19:36:24', '2022-02-16 19:36:24'),
-(20, 39, '164541007794.jpg', '2022-02-20 19:21:17', '2022-02-20 19:21:17');
+(20, 39, '164541007794.jpg', '2022-02-20 19:21:17', '2022-02-20 19:21:17'),
+(21, 40, '164551726944.jpg', '2022-02-22 01:07:49', '2022-02-22 01:07:49'),
+(22, 41, '164551924124.jpg', '2022-02-22 01:40:41', '2022-02-22 01:40:41'),
+(23, 41, '164551924188.png', '2022-02-22 01:40:41', '2022-02-22 01:40:41'),
+(24, 42, '164551941181.jpg', '2022-02-22 01:43:31', '2022-02-22 01:43:31'),
+(25, 42, '16455194117.png', '2022-02-22 01:43:31', '2022-02-22 01:43:31');
 
 -- --------------------------------------------------------
 
@@ -16675,11 +16686,14 @@ INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `
 ('091b1179-26a1-4233-9be0-59ef4f990a4b', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 21, '{\"name\":\"IT Department\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-27 19:46:24', '2022-01-27 19:46:24'),
 ('0d1f8ff7-8067-4223-80de-b195eb99694f', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 36, '{\"name\":\"Say Tong\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-02-10 20:57:54', '2022-02-10 20:57:54'),
 ('0e4a10ca-69ad-47c1-862f-bdcfdf6cf862', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 33, '{\"name\":\"Bong\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-02-10 20:51:22', '2022-02-10 20:51:22'),
+('15286dc4-4a15-4e0e-81e5-d3d9b51f567b', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 23, '{\"name\":\"Besy\",\"email\":\"admin@borribo.com.kh\",\"id_job\":null}', NULL, '2022-02-22 01:04:15', '2022-02-22 01:04:15'),
+('184b93ef-2fc2-41b5-9c9a-ae9b55a35a31', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 40, '{\"name\":\"Besy\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-02-22 01:07:49', '2022-02-22 01:07:49'),
 ('1934a479-7cdf-4b20-95c9-90b61b5e0da9', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 25, '{\"name\":null,\"email\":\"tong@admin.com\",\"id_loan_type\":\"3\"}', NULL, '2022-01-31 19:48:47', '2022-01-31 19:48:47'),
 ('1b642076-e550-426a-b56a-1afe6a97e2ba', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 11, '{\"name\":\"tong say\",\"email\":\"tongsay@gmail.com\",\"id_job\":null}', NULL, '2022-01-18 19:13:53', '2022-01-18 19:13:53'),
 ('1dc5ee8d-85ef-4e62-9e05-3a1b5722a3e8', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 29, '{\"name\":\"Say Tong\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-02-10 00:33:14', '2022-02-10 00:33:14'),
 ('21eac07d-dcf7-43f0-9b85-95407248556d', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 14, '{\"name\":\"Villa\",\"email\":null,\"id_job\":null}', NULL, '2022-01-23 19:38:33', '2022-01-23 19:38:33'),
 ('288e6d3d-1c38-469f-9bdb-e37cc3d818cc', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 10, '{\"name\":\"So Da\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 20:01:38', '2022-01-27 20:01:38'),
+('28da01e7-3a6b-4708-8b96-d23db9245409', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 42, '{\"name\":\"Phanit\",\"email\":null,\"id_loan_type\":null}', NULL, '2022-02-22 01:43:31', '2022-02-22 01:43:31'),
 ('3413e367-542b-4e21-9f0e-88e1339631cf', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 9, '{\"name\":\"Laravel test\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 19:59:57', '2022-01-27 19:59:57'),
 ('3a3af09a-1951-4a02-8d95-555f833bc8d2', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 15, '{\"name\":\"Rotha\",\"email\":null,\"id_loan_type\":\"6\"}', NULL, '2022-01-27 00:44:35', '2022-01-27 00:44:35'),
 ('422880e3-0a28-405c-b156-3436c7dd771e', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 31, '{\"name\":\"Say Tong\",\"email\":\"User@admin.com\",\"id_loan_type\":\"3\"}', NULL, '2022-02-10 00:34:58', '2022-02-10 00:34:58'),
@@ -16695,6 +16709,7 @@ INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `
 ('5602899f-c51d-49cb-a5ed-d43ade3b2dd6', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 20, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":null}', NULL, '2022-02-20 19:05:28', '2022-02-20 19:05:28'),
 ('5d430516-8d88-4702-87b4-bb72d3c40178', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 16, '{\"name\":\"Sal\",\"email\":null,\"id_job\":null}', NULL, '2022-01-24 20:47:39', '2022-01-24 20:47:39'),
 ('6086b36b-7627-44a3-b289-a23dc23d8706', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 11, '{\"name\":\"Beat\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 20:04:20', '2022-01-27 20:04:20'),
+('66264383-c7ca-4e59-a118-1c10dd5ba36a', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 41, '{\"name\":\"Reaksa\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-02-22 01:40:41', '2022-02-22 01:40:41'),
 ('6a06ba8f-ff8d-4ac2-819f-9b8be913974a', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 21, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":null}', NULL, '2022-02-20 19:16:30', '2022-02-20 19:16:30'),
 ('6ee2304a-e5f2-420e-a63a-c82d58332441', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 37, '{\"name\":\"tt\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-02-16 19:13:04', '2022-02-16 19:13:04'),
 ('7553e027-1758-4aa0-b32b-29e547f588d0', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 38, '{\"name\":\"Besy\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-02-16 19:36:24', '2022-02-16 19:36:24'),
@@ -16705,6 +16720,7 @@ INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `
 ('9295477f-5ae1-4c50-88c5-9d47d3c018b4', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 26, '{\"name\":null,\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-01-31 19:50:38', '2022-01-31 19:50:38'),
 ('9ef22e75-57d8-4e98-9ff5-798bcb6c5397', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 13, '{\"name\":\"Laravel test\",\"email\":\"Admin@admin.com\",\"id_job\":null}', NULL, '2022-01-21 02:46:55', '2022-01-21 02:46:55'),
 ('9f2709aa-c674-4548-9a86-c1b419889c0c', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 16, '{\"name\":\"Laravel test\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-27 00:59:17', '2022-01-27 00:59:17'),
+('aac9cc63-5079-4f49-888a-8201f162fa6f', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 14, '{\"name\":\"Besy\",\"email\":null,\"id_job\":\"11\"}', NULL, '2022-02-22 01:13:16', '2022-02-22 01:13:16'),
 ('ab2f0179-60aa-4cab-9104-50ed8a40248e', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 6, '{\"name\":\"So D\",\"email\":null,\"id_loan_type\":\"5\"}', NULL, '2022-01-23 19:56:18', '2022-01-23 19:56:18'),
 ('ac11a6d9-4375-4880-9054-65fea6f6fcd1', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 24, '{\"name\":null,\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-31 19:45:27', '2022-01-31 19:45:27'),
 ('ba6bd70c-e52f-48a6-a9ab-0ab773f294e1', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 4, '{\"name\":\"So Da\",\"email\":\"soda@admin.com\",\"id_job\":\"1\"}', NULL, '2022-01-18 19:12:07', '2022-01-18 19:12:07'),
@@ -17053,19 +17069,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `apply_jobs`
 --
 ALTER TABLE `apply_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `apply_loans`
 --
 ALTER TABLE `apply_loans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `compliants`
 --
 ALTER TABLE `compliants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -17113,7 +17129,7 @@ ALTER TABLE `loan_types`
 -- AUTO_INCREMENT for table `media_compliants`
 --
 ALTER TABLE `media_compliants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `migrations`
