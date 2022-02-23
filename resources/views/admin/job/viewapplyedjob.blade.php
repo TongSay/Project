@@ -35,7 +35,7 @@
                                         <button type="button" class="btn btn-second" data-toggle="modal"
                                             data-target="#exampleModal">
 
-                                            <img src="{{ asset('CV') }}/cv.jpg" alt="My Profile" id="output"
+                                            <img src="{{ asset('Media') }}/doc_default.jpg" alt="My Profile" id="output"
                                                 style="width: 220px; height: 150px; object-fit: cover; border-radius: 15px;" />
 
                                             <br>
