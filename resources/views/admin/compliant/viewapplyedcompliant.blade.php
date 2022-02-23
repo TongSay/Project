@@ -36,7 +36,7 @@
                                     <button type="button" class="btn btn-second" data-toggle="modal"
                                         data-target="#exampleModal">
 
-                                        <img src="{{ asset('CV') }}/cv.jpg" alt="My Profile" id="output"
+                                        <img src="{{ asset('Media') }}/doc_default.jpg" alt="documents" id="output"
                                             style="width: 220px; height: 150px; object-fit: cover; border-radius: 15px;" />
 
                                         <br>
@@ -80,7 +80,7 @@
                                                     <a href="{{ asset('Media/File_Compliant') }}/{{ $file->filename }}"
                                                         download="{{ $file->filename }}">
                                                         <img src="{{ asset('Media/File_Compliant') }}/{{ $file->filename }}"
-                                                            alt="My Profile" id="output"
+                                                            alt="documents" id="output"
                                                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 5px 5px 25px gray" />
                                                     </a>
 

@@ -55,7 +55,7 @@ class CompliantController extends Controller
 
         if (session('success_message'))
         {
-            Alert::success('Success!', session('success_message'));
+            Alert::success(__('alert.Success'), session('success_message'));
         }
       
         

@@ -78,6 +78,8 @@ if($request->hasFile('photos'))
 
         }
 
+        
+
         return redirect()->back()->withSuccessMessage(__('alert.JobSubmit'));
 
 

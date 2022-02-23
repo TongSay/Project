@@ -64,7 +64,7 @@ class JobController extends Controller
         $job = Job::find($id);
         if (session('success_message'))
         {
-            Alert::success('Success!', session('success_message'));
+            Alert::success(__('alert.Success'), session('success_message'));
         }
 
         

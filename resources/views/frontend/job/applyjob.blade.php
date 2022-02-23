@@ -52,6 +52,8 @@
                 
             @endif
 
+            
+
             <div class="col-md-12">
                 <div class="contact-right">
                     <form action="{{ route('applyjobid.storeapplyjob',[$job->id])}}" method="POST" class="form-contact-right" enctype="multipart/form-data"> @csrf
@@ -116,9 +118,9 @@
                         <div class="input-row">
                             
                             
-                            <div class="input-services">
-                                <label for="services" class="heading-features"> {{__('globle.form.upload')}} {{__('globle.form.nidc')}}  </label>
-                                <input type="file" name="photos[]" multiple class="input-contact form-control" >
+                            <div class="input-email">
+                                <label for="services" class="heading-features"> {{__('globle.form.upload')}} {{__('globle.form.cv')}} ​/ {{__('globle.form.document')}} <strong style="color: red;">*</strong>  </label>
+                                <input type="file" name="photos[]" multiple class="input-contact form-control" required>
                             </div>
                         </div>
                         <div class="button">

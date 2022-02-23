@@ -24,7 +24,7 @@ class ApplyLoanController extends Controller
 
         if (session('success_message'))
         {
-            Alert::success('Success!', session('success_message'));
+            Alert::success(__('alert.Success'), session('success_message'));
         }
          return view('frontend.product.applyloan',compact('loan','title','countries'));
     }
@@ -44,7 +44,7 @@ class ApplyLoanController extends Controller
         
         if (session('success_message'))
         {
-            Alert::success('Success!', session('success_message'));
+            Alert::success(__('alert.Success'), session('success_message'));
         }
         
         return view('frontend.product.applyotherloan',compact('title','countries'));

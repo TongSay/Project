@@ -102,7 +102,7 @@
                             <div class="input-row">
                             
                                 <div class="input-email">
-                                    <label id="email" class="heading-features">{{__('globle.form.upload')}} {{__('globle.form.cv')}}  <strong style="color: red;">*</strong></label>
+                                    <label id="email" class="heading-features">{{__('globle.form.upload')}} {{__('globle.form.document')}}  <strong style="color: red;">*</strong></label>
                                     <input type="file" name="photos[]" multiple class="input-contact form-control" required>
                                 </div>
                                 

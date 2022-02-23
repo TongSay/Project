@@ -12,4 +12,6 @@ return[
     'ApplyLoanSubmit' => 'Your Loan application has been submitted successfully.
     The agent will contact you soon.
     Thank you.',
+
+    'Success' => 'Success!',
 ];
