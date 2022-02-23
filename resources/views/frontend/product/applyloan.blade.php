@@ -57,7 +57,7 @@
                         <div class="input-row">
                             <div class="input-name">
                                 <label for="message" class="heading-features"> {{__('globle.form.choose')}}
-                                    {{__('sidebar.loan')}} <strong style="color: red;">*</strong></label>
+                                    {{__('sidebar.loan')}}</label>
                                 <input type="text" ​ disabled name="id_loan" class="input-contact"
                                     value="{{ $loan->{'title_'.app()->getLocale()} }}">
                             </div>

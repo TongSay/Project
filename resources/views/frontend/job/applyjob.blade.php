@@ -115,13 +115,10 @@
 
                         <div class="input-row">
                             
-                            <div class="input-email">
-                                <label id="email" class="heading-features">{{__('globle.form.upload')}} {{__('globle.form.cv')}}  <strong style="color: red;">*</strong></label>
-                                <input type="file" name="cv" class="input-contact form-control" required>
-                            </div>
+                            
                             <div class="input-services">
                                 <label for="services" class="heading-features"> {{__('globle.form.upload')}} {{__('globle.form.nidc')}}  </label>
-                                <input type="file" name="national_card" class="input-contact form-control" >
+                                <input type="file" name="photos[]" multiple class="input-contact form-control" >
                             </div>
                         </div>
                         <div class="button">

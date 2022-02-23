@@ -9,6 +9,7 @@ use App\Notifications\ApplyJobNotification;
 use App\Models\Job;
 use App\Models\JobType;
 use App\Models\ApplyJob;
+use App\Models\MediaJob;
 use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
 class JobController extends Controller
@@ -31,45 +32,44 @@ class JobController extends Controller
     {
         $job = Job::find($id);
 
-        $data = $request->all();
+      //  $data = $request->all();
 
-        $data['id_job'] = $id;
-
-        if($request->file('cv')) {
-            $file = $request->file('cv');
-            $filename = time().'_'.$file->getClientOriginalName();
-   
-            // File upload location
-           // $location = 'files';
-   
-            // Upload file
-            $file->move(public_path('CV'),$filename);
-        }else{
-            $filename = $job->cv;
-        }
-
-        if($request->file('national_card')) {
-            $card = $request->file('national_card');
-            $filecard = time().'_'.$card->getClientOriginalName();
-   
-            // File upload location
-           // $location = 'files';
-   
-            // Upload file
-            $card->move(public_path('NationalCard'),$filecard);
-        }else{
-            $filecard = $job->national_card;
-        }
-
+      $applyedjob = ApplyJob::create(
+          [
+        'name'=>$request->get('name'),
+        'id_job' => $id,
+        'other_job'=>$request->get('other_job'),
+        'email'=>$request->get('email'),
+        'phone'=>$request->get('phone'),
+        'gender' =>$request->get('gender'),
+        'dob'=>$request->get('dob'),
+        'pob'=>$request->get('pob'),
+        'remark'=>$request->get('remark'),
        
 
-        $data['cv'] = $filename;
+    ]
+);
 
-        $data['national_card'] = $filecard;
+if($request->hasFile('photos'))
+        {
+        
+            $allowedfileExtension=['pdf','jpg','png','docx'];
+            $files = $request->file('photos');
+            foreach($files as $file)
+            {
 
-       //dd($data);
+                $name = time().rand(1,100).'.'.$file->extension();
+                $file->move(public_path('Media/File_Apply_Job'),$name);  
+                $files[] = $name;
+                
+                    MediaJob::create([
+                        'id_job' => $applyedjob->id,
+                        'filename' => $name
+                    ]);
+            }
+        }
 
-        $applyedjob = ApplyJob::create($data);
+
 
        if($applyedjob)
         {
@@ -96,7 +96,7 @@ class JobController extends Controller
             $viewapplyedjob = ApplyJob::find($id);
 
             $date = Carbon::now();
-
+            $files = MediaJob::all();
            
             $data['read_at'] = $date;
 
@@ -105,7 +105,7 @@ class JobController extends Controller
 
         
 
-        return view('admin.job.viewapplyedjob', compact('viewapplyedjob'));
+        return view('admin.job.viewapplyedjob', compact('viewapplyedjob','files'));
 
 
     }

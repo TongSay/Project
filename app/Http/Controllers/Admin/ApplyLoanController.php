@@ -82,7 +82,7 @@ class ApplyLoanController extends Controller
        // $location = 'files';
 
         // Upload file
-        $card->move(public_path('NationalCard'),$filecard);
+        $card->move(public_path('Media/National_Card'),$filecard);
     }
     else{
         $filecard = $loan->national_card;
@@ -127,7 +127,7 @@ class ApplyLoanController extends Controller
        // $location = 'files';
 
         // Upload file
-        $card->move(public_path('NationalCard'),$filecard);
+        $card->move(public_path('Media/National_Card'),$filecard);
     }else{
         $filecard = $loan->national_card;
     }

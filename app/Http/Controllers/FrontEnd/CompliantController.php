@@ -99,39 +99,7 @@ class CompliantController extends Controller
 
         ]);
 
-        
 
-        // if($request->file('file')) {
-        //     $file = $request->file('file');
-        //     $filename = time().'_'.$file->getClientOriginalName();
-   
-        //     // File upload location
-        //    // $location = 'files';
-   
-        //     // Upload file
-        //     $file->move(public_path('FileCompliant'),$filename);
-        // }
-
-// ============= Multiple File =============
-
-
-        // $files = [];
-        // if($request->hasfile('file'))
-        //  {
-        //     foreach($request->file('file') as $file)
-        //     {
-        //         $name = time().rand(1,100).'.'.$file->extension();
-        //         $file->move(public_path('FileCompliant'), $name);  
-        //         $files[] = $name;  
-        //     }
-        //  }
-  
-        //  $file= new Compliant();
-        //  $file->filenames = $files;
-
-        // $data['file'] = $file;
-
-       // dd($data);
 
        if($request->hasFile('photos'))
         {
@@ -142,7 +110,7 @@ class CompliantController extends Controller
             {
 
                 $name = time().rand(1,100).'.'.$file->extension();
-                $file->move(public_path('FileCompliant'),$name);  
+                $file->move(public_path('Media/File_Compliant'),$name);  
                 $files[] = $name;
                 
                     MediaCompliant::create([

@@ -35,14 +35,14 @@
 
                                     <br>
 
-                                    <img src="{{asset ('NationalCard')}}/identification.jpg" alt="My Profile"
+                                    <img src="{{asset ('Media/National_Card')}}/{{$viewapplyedloan->national_card}}" alt="My Profile"
                                         id="output"
                                         style="width: 220px; height: 150px; object-fit: cover; border-radius: 15px;" />
 
                                     <br>
 
 
-                                    <a href="{{ asset('NationalCard')}}/{{$viewapplyedloan->national_card}}"
+                                    <a href="{{ asset('Media/National_Card')}}/{{$viewapplyedloan->national_card}}"
                                         download="{{$viewapplyedloan->national_card}}">
                                         <p>Download Identify</p>
                                     </a>

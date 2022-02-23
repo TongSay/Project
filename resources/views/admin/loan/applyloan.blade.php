@@ -96,7 +96,7 @@
                                     <td>{{ $applyloan->applyedloan->{'title_' . app()->getLocale()} }}</td>
                                     <td>{{ $applyloan->name }}</td>
                                     <td>
-                                        @if ($applyloan->amount)
+                                        @if ($applyloan->amount == null)
                                         No amount to require!
 
                                         @else
@@ -317,7 +317,7 @@
                                     <td>{{ $applyloan->applyedloan->{'title_' . app()->getLocale()} }}</td>
                                     <td>{{ $applyloan->name }}</td>
                                     <td>
-                                        @if ($applyloan->email == null)
+                                        @if ($applyloan->amount == null)
                                         No amount to require!
 
                                         @else

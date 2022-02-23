@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2022 at 10:37 AM
+-- Generation Time: Feb 23, 2022 at 07:48 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -56,7 +56,7 @@ INSERT INTO `address` (`id_county`, `county`, `id_state`, `state`) VALUES
 
 CREATE TABLE `apply_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `id_job` int(11) NOT NULL,
+  `id_job` int(11) DEFAULT NULL,
   `other_job` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` int(11) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `apply_jobs` (
   `dob` date NOT NULL,
   `pob` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remark` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cv` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cv` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `national_card` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `read_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -79,17 +79,8 @@ CREATE TABLE `apply_jobs` (
 --
 
 INSERT INTO `apply_jobs` (`id`, `id_job`, `other_job`, `name`, `gender`, `email`, `phone`, `dob`, `pob`, `remark`, `cv`, `national_card`, `read_at`, `created_at`, `updated_at`, `status`, `message`) VALUES
-(4, 1, NULL, 'So Da', 0, 'soda@admin.com', 708921111, '2022-01-19', 'Tuek Tlar, Sen Sok, Phnom Penh.', 'ghsdgd', '1642558327_mGS1SWv0Ni3KsmCngbusbUhpml4ZZ8GoBnapFZeH.jpg', '1642558327_mGS1SWv0Ni3KsmCngbusbUhpml4ZZ8GoBnapFZeH.jpg', NULL, '2022-01-18 19:12:07', '2022-01-20 19:45:38', NULL, NULL),
-(5, 2, NULL, 'Rotha', 1, 'rotha@gmail.com', 123465789, '2022-01-19', 'Tuek Tlar, Sen Sok, Phnom Penh.', 'dsfas', '1642568772_vue.jpg', '1642568772_vue.jpg', NULL, '2022-01-18 22:06:12', '2022-02-08 21:33:50', 2, 'Don\'t Complete Documentation'),
-(6, 8, NULL, 'Villa', 2, NULL, 70891667, '2022-01-18', 'Tuek Tlar, Sen Sok, Phnom Penh.', NULL, '1642989885_vue.jpg', NULL, NULL, '2022-01-23 19:04:45', '2022-02-08 20:40:38', 1, 'Yes'),
-(7, 8, NULL, 'សាយ​ តុង', 1, NULL, 101234567, '2022-01-03', 'Tuek Tlar, Sen Sok, Phnom Penh.', NULL, '1642990292_vue.jpg', NULL, NULL, '2022-01-23 19:11:32', '2022-01-23 19:11:32', NULL, NULL),
-(8, 10, NULL, 'tong say', 1, NULL, 156323213, '2022-01-12', 'Tuek Tlar, Sen Sok, Phnom Penh.', 'dd', '1643338668_vue.jpg', '1643338668_HR-Aavatar.jpg', NULL, '2022-01-27 19:57:48', '2022-01-27 19:57:48', NULL, NULL),
-(9, 10, NULL, 'Laravel test', 1, NULL, 156323213, '1999-02-12', 'Phnom Penh', NULL, '1643338797_Flat-logo-envato-Clipart-PNG.png', NULL, '2022-02-10 20:41:54', '2022-01-27 19:59:57', '2022-02-10 20:41:54', 2, 'Don\'t have documentation'),
-(10, 10, NULL, 'So Da', 2, NULL, 156323213, '1999-02-02', 'Takoe', NULL, '1643338898_vue.jpg', NULL, NULL, '2022-01-27 20:01:38', '2022-02-08 21:39:00', 1, 'Yes'),
-(11, 10, NULL, 'Beat', 2, NULL, 156323213, '1999-02-01', 'Takoe', NULL, '1643339060_Flat-logo-envato-Clipart-PNG.png', NULL, NULL, '2022-01-27 20:04:20', '2022-02-08 21:03:10', 1, NULL),
-(12, 12, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, '2022-02-21', 'phnom penh', NULL, '1645410944_SizeProduct.jpg', '1645410944_SizeProduct.jpg', NULL, '2022-02-20 19:35:44', '2022-02-20 19:35:44', NULL, NULL),
-(13, 12, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, '2022-02-22', 'phnom penh', NULL, '1645410974_slide1.jpg', NULL, NULL, '2022-02-20 19:36:14', '2022-02-20 19:36:14', NULL, NULL),
-(14, 11, NULL, 'Besy', 2, NULL, 112122111, '2022-02-09', 'Phnom Penh', NULL, '1645517596_139862382_469044111151778_5524384465676293045_n.jpg', NULL, '2022-02-22 01:23:40', '2022-02-22 01:13:16', '2022-02-22 01:23:40', NULL, NULL);
+(50, 8, NULL, 'Reaksa', 1, NULL, 1122445544, '2022-02-23', 'Phnom Penh', NULL, NULL, NULL, '2022-02-22 21:28:51', '2022-02-22 21:21:29', '2022-02-22 21:28:51', 1, 'Completed documentation'),
+(51, 12, NULL, 'Reaksa', 1, NULL, 122366446, '1998-08-12', 'Phnom Penh', NULL, NULL, NULL, NULL, '2022-02-22 21:45:50', '2022-02-22 21:45:50', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -121,19 +112,9 @@ CREATE TABLE `apply_loans` (
 --
 
 INSERT INTO `apply_loans` (`id`, `id_loan`, `loan_purpose`, `name`, `gender`, `email`, `phone`, `pob`, `message`, `national_card`, `read_at`, `created_at`, `updated_at`, `amount`, `status`, `comments`) VALUES
-(11, 1, NULL, 'tong say', 1, 'tongsay@gmail.com', 70891667, 'Tuek Tlar, Sen Sok, Phnom Penh.', 'fgsfgs', '1642558433_mGS1SWv0Ni3KsmCngbusbUhpml4ZZ8GoBnapFZeH.jpg', NULL, '2022-01-18 19:13:53', '2022-01-24 20:12:08', NULL, '2', NULL),
-(12, 1, NULL, 'So Da', 2, 'admin123@gmail.com', 10234555, 'Phnom Penh', 'hdghfdh', '1642558800_MMc8BnRrANU3n2R3K8Dj2CpaQ9K1bw93z4DOnUoe.jpg', NULL, '2022-01-18 19:20:00', '2022-02-08 20:34:22', NULL, '1', NULL),
-(13, 3, NULL, 'Laravel test', 1, 'Admin@admin.com', 70891667, 'Phnom Penh', 'I want apply', '1642758414_xa7en7o59vtxdhgte92u.png', '2022-02-10 19:05:45', '2022-01-21 02:46:54', '2022-02-10 19:05:45', NULL, '1', 'dd'),
-(14, 6, NULL, 'Villa', 1, NULL, 1023333, 'Phnom Penh', NULL, '1642991913_vue.jpg', NULL, '2022-01-23 19:38:33', '2022-01-24 20:05:39', 1000, '2', 'Don\'t Have Documentation'),
-(15, 5, NULL, 'So Da', 2, NULL, 1022331, 'Phnom Penh', NULL, '1642992304_vue.jpg', NULL, '2022-01-23 19:45:04', '2022-01-24 20:05:13', 500, '1', 'Completed Documentation'),
-(16, 2, NULL, 'Sal', 1, NULL, 13467892, 'Phnom Penh', NULL, '1643082459_vue.jpg', '2022-02-10 19:05:27', '2022-01-24 20:47:39', '2022-02-10 19:05:27', 1000, '1', NULL),
-(17, 2, NULL, 'Villa', 2, NULL, 156323213, 'Tuek Tlar, Sen Sok, Phnom Penh.', NULL, '1643339624_Flat-logo-envato-Clipart-PNG.png', NULL, '2022-01-27 20:13:44', '2022-02-10 19:02:03', 1000, '1', 'y'),
-(18, 2, NULL, 'So Da', 2, NULL, 156323213, 'Tuek Tlar, Sen Sok, Phnom Penh.', NULL, '1643339700_vue.jpg', '2022-02-10 19:01:12', '2022-01-27 20:15:00', '2022-02-10 19:01:12', 1000, '1', NULL),
-(19, 4, NULL, 'Besy', 2, 'admin@borribo.com.kh', 112122111, '333', '333', '1645065426_Report.jpg', '2022-02-16 19:37:20', '2022-02-16 19:37:06', '2022-02-16 19:37:20', 1333, NULL, NULL),
-(20, 3, NULL, 'tong say', 2, 'tongsay2019@gmail.com', 70891667, 'កណ្ដាល', NULL, '1645409127_Micro Loan.jpg', '2022-02-20 19:06:49', '2022-02-20 19:05:27', '2022-02-20 19:06:49', 200, NULL, NULL),
-(21, 6, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, 'ព្រះសីហនុ', NULL, '1645409790_Micro Loan.jpg', '2022-02-20 19:16:41', '2022-02-20 19:16:30', '2022-02-20 19:16:41', 600, NULL, NULL),
-(22, 1, NULL, 'tong say', 1, 'tongsay2019@gmail.com', 70891667, 'កំពត', NULL, '1645411055_SizeProduct.jpg', NULL, '2022-02-20 19:37:35', '2022-02-20 19:37:35', 200, NULL, NULL),
-(23, 3, NULL, 'Besy', 2, 'admin@borribo.com.kh', 112122111, 'ភ្នំពេញ', NULL, '1645517054_Progress.jpg', '2022-02-22 01:20:29', '2022-02-22 01:04:14', '2022-02-22 01:20:29', 200, NULL, NULL);
+(27, 1, NULL, 'Say Tong', 1, NULL, 122366446, 'ភ្នំពេញ', NULL, '1645592148_139862382_469044111151778_5524384465676293045_n.jpg', '2022-02-22 22:05:12', '2022-02-22 21:55:48', '2022-02-22 22:05:12', 2000, NULL, NULL),
+(28, 2, NULL, 'Reaksa', 2, NULL, 122366446, 'ភ្នំពេញ', NULL, '1645592255_Screenshot (1).png', '2022-02-22 21:57:51', '2022-02-22 21:57:35', '2022-02-22 21:57:51', 1000, NULL, NULL),
+(29, 2, NULL, 'Sopheak', 2, NULL, 122366446, 'ភ្នំពេញ', NULL, '1645592422_Screenshot (1).png', NULL, '2022-02-22 22:00:22', '2022-02-22 22:00:22', 500, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -173,19 +154,8 @@ CREATE TABLE `compliants` (
 --
 
 INSERT INTO `compliants` (`id`, `name`, `id_loan_type`, `email`, `phone`, `subject`, `compliant_description`, `read_at`, `created_at`, `updated_at`, `status`, `message`) VALUES
-(30, 'Bopha Sok', 2, NULL, 156323213, 'tt', 'tt', '2022-02-10 19:52:41', '2022-02-10 00:34:10', '2022-02-10 19:52:41', 1, 'Yed'),
-(31, 'Say Tong', 3, 'User@admin.com', 156323213, 'ttt', 'ttt', '2022-02-10 20:48:18', '2022-02-10 00:34:58', '2022-02-10 20:48:18', 2, 'Don\'t have documentation'),
-(32, 'Best', 6, NULL, 156323213, 'Best', 'Best', '2022-02-20 19:25:44', '2022-02-10 20:00:39', '2022-02-20 19:25:44', NULL, NULL),
-(33, 'Bong', 3, NULL, 156323213, 'Ttt', 'Ttt', '2022-02-10 20:52:55', '2022-02-10 20:51:22', '2022-02-10 20:52:55', NULL, NULL),
-(34, 'Finance', 4, NULL, 1111, 'ddd', 'dddd', '2022-02-20 19:30:20', '2022-02-10 20:54:45', '2022-02-20 19:30:20', NULL, NULL),
-(35, 'Information Technology', 4, NULL, 156323213, 'ttt', 'tttt', '2022-02-20 19:25:05', '2022-02-10 20:56:44', '2022-02-20 19:25:05', NULL, NULL),
-(36, 'Say Tong', 4, NULL, 156323213, 'tt', 'tt', '2022-02-10 20:58:12', '2022-02-10 20:57:54', '2022-02-10 20:58:12', NULL, NULL),
-(37, 'tt', 3, NULL, 112122111, 'tttt', 'ttt', NULL, '2022-02-16 19:13:03', '2022-02-16 19:13:03', NULL, NULL),
-(38, 'Besy', 3, NULL, 112122111, 'Ttt', 'ttt', '2022-02-20 19:23:59', '2022-02-16 19:36:24', '2022-02-20 19:23:59', NULL, NULL),
-(39, 'tong say', 4, 'tongsay2019@gmail.com', 70891667, 'ddd', 'ddd', '2022-02-20 19:30:37', '2022-02-20 19:21:17', '2022-02-20 19:30:37', NULL, NULL),
-(40, 'Besy', 1, NULL, 112122111, 'tt', 'tt', '2022-02-22 01:25:26', '2022-02-22 01:07:49', '2022-02-22 01:25:26', NULL, NULL),
-(41, 'Reaksa', 1, NULL, 112122111, 'no', 'no', NULL, '2022-02-22 01:40:41', '2022-02-22 01:40:41', NULL, NULL),
-(42, 'Phanit', NULL, NULL, 112122111, 'dd', 'dd', '2022-02-22 01:47:47', '2022-02-22 01:43:31', '2022-02-22 01:47:47', NULL, NULL);
+(44, 'Say Tong', NULL, 'saytong@borribo.com.kh', 70891667, 'don\'t have', 'don\'t have', '2022-02-22 21:34:02', '2022-02-22 21:33:46', '2022-02-22 21:34:02', NULL, NULL),
+(45, 'Sopheak', 1, NULL, 122366446, 'no', 'no', NULL, '2022-02-22 21:44:04', '2022-02-22 21:44:04', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -16574,7 +16544,46 @@ INSERT INTO `media_compliants` (`id`, `id_compliant`, `filename`, `created_at`, 
 (22, 41, '164551924124.jpg', '2022-02-22 01:40:41', '2022-02-22 01:40:41'),
 (23, 41, '164551924188.png', '2022-02-22 01:40:41', '2022-02-22 01:40:41'),
 (24, 42, '164551941181.jpg', '2022-02-22 01:43:31', '2022-02-22 01:43:31'),
-(25, 42, '16455194117.png', '2022-02-22 01:43:31', '2022-02-22 01:43:31');
+(25, 42, '16455194117.png', '2022-02-22 01:43:31', '2022-02-22 01:43:31'),
+(26, 43, '164557943989.png', '2022-02-22 18:23:59', '2022-02-22 18:23:59'),
+(27, 43, '164557943979.png', '2022-02-22 18:23:59', '2022-02-22 18:23:59'),
+(28, 43, '164557943938.png', '2022-02-22 18:23:59', '2022-02-22 18:23:59'),
+(29, 43, '164557943993.jpg', '2022-02-22 18:23:59', '2022-02-22 18:23:59'),
+(30, 43, '164557943946.jpg', '2022-02-22 18:23:59', '2022-02-22 18:23:59'),
+(31, 44, '164559082637.png', '2022-02-22 21:33:46', '2022-02-22 21:33:46'),
+(32, 44, '164559082669.png', '2022-02-22 21:33:46', '2022-02-22 21:33:46'),
+(33, 44, '164559082696.png', '2022-02-22 21:33:46', '2022-02-22 21:33:46'),
+(34, 44, '164559082690.jpg', '2022-02-22 21:33:46', '2022-02-22 21:33:46'),
+(35, 44, '164559082651.jpg', '2022-02-22 21:33:46', '2022-02-22 21:33:46'),
+(36, 45, '164559144499.jpg', '2022-02-22 21:44:04', '2022-02-22 21:44:04'),
+(37, 45, '164559144464.png', '2022-02-22 21:44:04', '2022-02-22 21:44:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `media_jobs`
+--
+
+CREATE TABLE `media_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_job` int(11) DEFAULT NULL,
+  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `media_jobs`
+--
+
+INSERT INTO `media_jobs` (`id`, `id_job`, `filename`, `created_at`, `updated_at`) VALUES
+(21, 50, '16455900891.png', '2022-02-22 21:21:29', '2022-02-22 21:21:29'),
+(22, 50, '164559008975.png', '2022-02-22 21:21:29', '2022-02-22 21:21:29'),
+(23, 50, '164559008947.png', '2022-02-22 21:21:29', '2022-02-22 21:21:29'),
+(24, 50, '164559008966.jpg', '2022-02-22 21:21:29', '2022-02-22 21:21:29'),
+(25, 50, '164559008980.jpg', '2022-02-22 21:21:29', '2022-02-22 21:21:29'),
+(26, 51, '164559155067.jpg', '2022-02-22 21:45:50', '2022-02-22 21:45:50'),
+(27, 51, '164559155026.png', '2022-02-22 21:45:50', '2022-02-22 21:45:50');
 
 -- --------------------------------------------------------
 
@@ -16614,7 +16623,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (19, '2022_01_18_071311_create_notifications_table', 1),
 (20, '2022_02_09_023451_create_media_table', 2),
 (21, '2022_02_10_014855_create_media_compliants_table', 3),
-(22, '2022_02_10_070710_create_media_compliants_table', 4);
+(22, '2022_02_10_070710_create_media_compliants_table', 4),
+(23, '2022_02_23_013811_create_media_jobs_table', 5),
+(24, '2022_02_23_020349_create_media_jobs_table', 6);
 
 -- --------------------------------------------------------
 
@@ -16687,21 +16698,27 @@ INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `
 ('0d1f8ff7-8067-4223-80de-b195eb99694f', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 36, '{\"name\":\"Say Tong\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-02-10 20:57:54', '2022-02-10 20:57:54'),
 ('0e4a10ca-69ad-47c1-862f-bdcfdf6cf862', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 33, '{\"name\":\"Bong\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-02-10 20:51:22', '2022-02-10 20:51:22'),
 ('15286dc4-4a15-4e0e-81e5-d3d9b51f567b', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 23, '{\"name\":\"Besy\",\"email\":\"admin@borribo.com.kh\",\"id_job\":null}', NULL, '2022-02-22 01:04:15', '2022-02-22 01:04:15'),
+('16784df8-250a-4740-8bea-ec442abc66c3', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 26, '{\"name\":\"Say Tong\",\"email\":null,\"id_job\":null}', NULL, '2022-02-22 21:53:23', '2022-02-22 21:53:23'),
 ('184b93ef-2fc2-41b5-9c9a-ae9b55a35a31', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 40, '{\"name\":\"Besy\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-02-22 01:07:49', '2022-02-22 01:07:49'),
 ('1934a479-7cdf-4b20-95c9-90b61b5e0da9', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 25, '{\"name\":null,\"email\":\"tong@admin.com\",\"id_loan_type\":\"3\"}', NULL, '2022-01-31 19:48:47', '2022-01-31 19:48:47'),
 ('1b642076-e550-426a-b56a-1afe6a97e2ba', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 11, '{\"name\":\"tong say\",\"email\":\"tongsay@gmail.com\",\"id_job\":null}', NULL, '2022-01-18 19:13:53', '2022-01-18 19:13:53'),
 ('1dc5ee8d-85ef-4e62-9e05-3a1b5722a3e8', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 29, '{\"name\":\"Say Tong\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-02-10 00:33:14', '2022-02-10 00:33:14'),
 ('21eac07d-dcf7-43f0-9b85-95407248556d', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 14, '{\"name\":\"Villa\",\"email\":null,\"id_job\":null}', NULL, '2022-01-23 19:38:33', '2022-01-23 19:38:33'),
+('264851fc-926f-40a0-8400-b49564b39faa', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 46, '{\"name\":\"Task\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-02-22 20:43:03', '2022-02-22 20:43:03'),
 ('288e6d3d-1c38-469f-9bdb-e37cc3d818cc', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 10, '{\"name\":\"So Da\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 20:01:38', '2022-01-27 20:01:38'),
 ('28da01e7-3a6b-4708-8b96-d23db9245409', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 42, '{\"name\":\"Phanit\",\"email\":null,\"id_loan_type\":null}', NULL, '2022-02-22 01:43:31', '2022-02-22 01:43:31'),
 ('3413e367-542b-4e21-9f0e-88e1339631cf', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 9, '{\"name\":\"Laravel test\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 19:59:57', '2022-01-27 19:59:57'),
 ('3a3af09a-1951-4a02-8d95-555f833bc8d2', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 15, '{\"name\":\"Rotha\",\"email\":null,\"id_loan_type\":\"6\"}', NULL, '2022-01-27 00:44:35', '2022-01-27 00:44:35'),
+('3b457ded-5368-4a2c-9052-efdfe98c0ab8', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 44, '{\"name\":\"Say Tong\",\"email\":\"saytong@borribo.com.kh\",\"id_loan_type\":null}', NULL, '2022-02-22 21:33:46', '2022-02-22 21:33:46'),
+('3dd68e21-8a64-4b37-aedd-f357ea2bbf05', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 47, '{\"name\":\"Ra\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-02-22 20:45:43', '2022-02-22 20:45:43'),
 ('422880e3-0a28-405c-b156-3436c7dd771e', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 31, '{\"name\":\"Say Tong\",\"email\":\"User@admin.com\",\"id_loan_type\":\"3\"}', NULL, '2022-02-10 00:34:58', '2022-02-10 00:34:58'),
 ('4607ba05-fa05-4632-90f8-d299ff66a71c', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 12, '{\"name\":\"So Da\",\"email\":\"admin123@gmail.com\",\"id_job\":null}', NULL, '2022-01-18 19:20:00', '2022-01-18 19:20:00'),
 ('464ab6d4-5e68-4b22-8a65-3d4ca30269f6', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 8, '{\"name\":\"IT Department\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-01-23 20:09:13', '2022-01-23 20:09:13'),
 ('478c9971-75c2-4417-ab74-276963b710c1', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 35, '{\"name\":\"Information Technology\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-02-10 20:56:44', '2022-02-10 20:56:44'),
 ('48788389-8466-4d35-86b0-f64b7382bff6', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 8, '{\"name\":\"tong say\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 19:57:48', '2022-01-27 19:57:48'),
 ('4986650a-2552-4a97-9002-1df3d0101421', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 19, '{\"name\":\"IT Department\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-27 19:04:21', '2022-01-27 19:04:21'),
+('49914d2f-a7e9-4cb5-aa23-9485beee0363', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 29, '{\"name\":\"Sopheak\",\"email\":null,\"id_job\":null}', NULL, '2022-02-22 22:00:22', '2022-02-22 22:00:22'),
+('49b9f96f-efd6-49f0-8fe7-c3e8f8c80e13', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 34, '{\"name\":\"Phanit\",\"email\":null,\"id_job\":\"11\"}', NULL, '2022-02-22 19:51:43', '2022-02-22 19:51:43'),
 ('4ca63e83-8d05-4e40-8ef4-b5bfd767ccdc', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 32, '{\"name\":\"Best\",\"email\":null,\"id_loan_type\":\"6\"}', NULL, '2022-02-10 20:00:40', '2022-02-10 20:00:40'),
 ('4e6c9d81-e350-4272-bfc1-48401a09befc', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 18, '{\"name\":\"So Da\",\"email\":null,\"id_job\":null}', NULL, '2022-01-27 20:15:00', '2022-01-27 20:15:00'),
 ('510794d0-fdb7-4631-9fdc-8195d4ec7c89', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 18, '{\"name\":\"So D\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-01-27 01:38:59', '2022-01-27 01:38:59'),
@@ -16709,11 +16726,14 @@ INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `
 ('5602899f-c51d-49cb-a5ed-d43ade3b2dd6', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 20, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":null}', NULL, '2022-02-20 19:05:28', '2022-02-20 19:05:28'),
 ('5d430516-8d88-4702-87b4-bb72d3c40178', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 16, '{\"name\":\"Sal\",\"email\":null,\"id_job\":null}', NULL, '2022-01-24 20:47:39', '2022-01-24 20:47:39'),
 ('6086b36b-7627-44a3-b289-a23dc23d8706', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 11, '{\"name\":\"Beat\",\"email\":null,\"id_job\":\"10\"}', NULL, '2022-01-27 20:04:20', '2022-01-27 20:04:20'),
+('61e16a6d-a56f-4682-95ef-2808a4b7f724', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 28, '{\"name\":\"Reaksa\",\"email\":null,\"id_job\":null}', NULL, '2022-02-22 21:57:35', '2022-02-22 21:57:35'),
+('62282099-9d87-46fd-83e1-f4d81cb6c153', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 43, '{\"name\":\"Phanit\",\"email\":null,\"id_loan_type\":null}', NULL, '2022-02-22 18:23:59', '2022-02-22 18:23:59'),
 ('66264383-c7ca-4e59-a118-1c10dd5ba36a', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 41, '{\"name\":\"Reaksa\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-02-22 01:40:41', '2022-02-22 01:40:41'),
 ('6a06ba8f-ff8d-4ac2-819f-9b8be913974a', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 21, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":null}', NULL, '2022-02-20 19:16:30', '2022-02-20 19:16:30'),
 ('6ee2304a-e5f2-420e-a63a-c82d58332441', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 37, '{\"name\":\"tt\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-02-16 19:13:04', '2022-02-16 19:13:04'),
 ('7553e027-1758-4aa0-b32b-29e547f588d0', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 38, '{\"name\":\"Besy\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-02-16 19:36:24', '2022-02-16 19:36:24'),
 ('75ae49d8-f616-4911-9fb7-01e8e4ebfc87', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 17, '{\"name\":\"IT Department\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-01-27 01:16:11', '2022-01-27 01:16:11'),
+('84107400-9e6d-4f9b-9641-87e7d45a0c7b', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 27, '{\"name\":\"Say Tong\",\"email\":null,\"id_job\":null}', NULL, '2022-02-22 21:55:48', '2022-02-22 21:55:48'),
 ('85f9cd0c-2848-4fd0-a2fe-6e8dc75ae7a4', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 12, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":\"12\"}', NULL, '2022-02-20 19:35:44', '2022-02-20 19:35:44'),
 ('892708e6-c3ac-474b-98b0-b0421d4db8fc', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 5, '{\"name\":\"tong say\",\"email\":\"tongsay@gmail.com\",\"id_loan_type\":\"1\"}', NULL, '2022-01-18 21:56:56', '2022-01-18 21:56:56'),
 ('8fbfce14-569b-44c4-8f0c-8e41553a2446', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 30, '{\"name\":\"Bopha Sok\",\"email\":null,\"id_loan_type\":\"2\"}', NULL, '2022-02-10 00:34:10', '2022-02-10 00:34:10'),
@@ -16723,23 +16743,33 @@ INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `
 ('aac9cc63-5079-4f49-888a-8201f162fa6f', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 14, '{\"name\":\"Besy\",\"email\":null,\"id_job\":\"11\"}', NULL, '2022-02-22 01:13:16', '2022-02-22 01:13:16'),
 ('ab2f0179-60aa-4cab-9104-50ed8a40248e', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 6, '{\"name\":\"So D\",\"email\":null,\"id_loan_type\":\"5\"}', NULL, '2022-01-23 19:56:18', '2022-01-23 19:56:18'),
 ('ac11a6d9-4375-4880-9054-65fea6f6fcd1', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 24, '{\"name\":null,\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-31 19:45:27', '2022-01-31 19:45:27'),
+('adc49efc-681a-4eb5-8472-1fc73302f73b', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 33, '{\"name\":\"Reaksa\",\"email\":null,\"id_job\":\"11\"}', NULL, '2022-02-22 19:49:59', '2022-02-22 19:49:59'),
+('b3fa3e48-a101-432b-a43a-003c7ef576a0', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 43, '{\"name\":\"Ra\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-02-22 20:36:35', '2022-02-22 20:36:35'),
 ('ba6bd70c-e52f-48a6-a9ab-0ab773f294e1', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 4, '{\"name\":\"So Da\",\"email\":\"soda@admin.com\",\"id_job\":\"1\"}', NULL, '2022-01-18 19:12:07', '2022-01-18 19:12:07'),
 ('baf98dcd-7ba6-4c5c-98ce-7821c0f6ff36', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 22, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":null}', NULL, '2022-02-20 19:37:35', '2022-02-20 19:37:35'),
 ('bf262867-ad96-4704-8a1b-d5d2d292c8aa', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 12, '{\"name\":\"Sok Reaksa\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-27 00:36:39', '2022-01-27 00:36:39'),
 ('c12ef3d6-9e2e-4b3b-a516-a1ebc08e819d', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 23, '{\"name\":\"Laravel test\",\"email\":null,\"id_loan_type\":\"3\"}', NULL, '2022-01-27 19:49:34', '2022-01-27 19:49:34'),
+('c2ce8cb3-9800-4793-9aef-4c57be1ec96d', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 45, '{\"name\":\"Sopheak\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-02-22 21:44:05', '2022-02-22 21:44:05'),
 ('c3e5cc70-301a-4b96-b092-c3fa207bbfb3', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 19, '{\"name\":\"Besy\",\"email\":\"admin@borribo.com.kh\",\"id_job\":null}', NULL, '2022-02-16 19:37:06', '2022-02-16 19:37:06'),
+('c3fe4e2e-d23b-4332-aa37-1e5496144cc4', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 48, '{\"name\":\"Reaksa\",\"email\":\"admin@borribo.com.kh\",\"id_job\":\"8\"}', NULL, '2022-02-22 20:50:41', '2022-02-22 20:50:41'),
 ('c579b928-1be8-437f-b4e1-dbd5515eff32', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 10, '{\"name\":\"Bell\",\"email\":null,\"id_loan_type\":\"5\"}', NULL, '2022-01-23 20:28:15', '2022-01-23 20:28:15'),
+('cf9c64a9-052c-4220-a63b-e07768c29db2', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 50, '{\"name\":\"Reaksa\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-02-22 21:21:29', '2022-02-22 21:21:29'),
 ('cfaa8604-228f-462d-b890-84d7b43ccf3f', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 6, '{\"name\":\"Villa\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-01-23 19:04:46', '2022-01-23 19:04:46'),
 ('d638a072-16a1-43b6-9ec7-9311d38bc2ff', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 11, '{\"name\":\"Sal\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-01-24 18:46:51', '2022-01-24 18:46:51'),
+('d95a8834-e84c-45ca-b0a9-8bf7d2d08e58', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 24, '{\"name\":\"Reaksa\",\"email\":null,\"id_job\":null}', NULL, '2022-02-22 18:21:36', '2022-02-22 18:21:36'),
+('e1c1ad53-6178-4f7f-9249-4412e620f551', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 25, '{\"name\":\"Besy\",\"email\":null,\"id_job\":null}', NULL, '2022-02-22 18:22:45', '2022-02-22 18:22:45'),
 ('e2911169-842b-48fb-bf46-8187e139f68b', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 34, '{\"name\":\"Finance\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-02-10 20:54:45', '2022-02-10 20:54:45'),
+('eab8b77f-73a8-4a95-8a09-deefe06877cd', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 49, '{\"name\":\"Say Tong\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-02-22 21:16:25', '2022-02-22 21:16:25'),
 ('ead21744-a9de-4855-b8e9-1dd8922d8e0d', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 9, '{\"name\":\"IT Department\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-01-23 20:15:17', '2022-01-23 20:15:17'),
 ('eb866f75-b8d7-4cc2-b098-b30d77cb6de3', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 20, '{\"name\":\"So D\",\"email\":null,\"id_loan_type\":\"4\"}', NULL, '2022-01-27 19:42:47', '2022-01-27 19:42:47'),
+('ebd17cb1-7374-4c18-80e1-3ede08aaa46c', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 51, '{\"name\":\"Reaksa\",\"email\":null,\"id_job\":\"12\"}', NULL, '2022-02-22 21:45:50', '2022-02-22 21:45:50'),
 ('ecbae40d-b111-4480-98a0-507b24a9c837', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 7, '{\"name\":\"\\u179f\\u17b6\\u1799\\u200b \\u178f\\u17bb\\u1784\",\"email\":null,\"id_job\":\"8\"}', NULL, '2022-01-23 19:11:32', '2022-01-23 19:11:32'),
 ('ef172669-cce5-4aaa-933c-e05536b4a40e', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 17, '{\"name\":\"Villa\",\"email\":null,\"id_job\":null}', NULL, '2022-01-27 20:13:45', '2022-01-27 20:13:45'),
 ('f0c8399d-50ba-42f0-83c1-78dba81bc11a', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 22, '{\"name\":\"Villa\",\"email\":null,\"id_loan_type\":\"1\"}', NULL, '2022-01-27 19:48:09', '2022-01-27 19:48:09'),
 ('f434716a-bc25-4296-8a75-9709fcf48071', 'App\\Notifications\\ApplyLoanNotification', 'App\\Models\\ApplyLoan', 15, '{\"name\":\"So Da\",\"email\":null,\"id_job\":null}', NULL, '2022-01-23 19:45:04', '2022-01-23 19:45:04'),
 ('f6654e0d-5a16-4843-a7a6-2b77e9b90d29', 'App\\Notifications\\CompliantNotification', 'App\\Models\\Compliant', 4, '{\"name\":\"So Da\",\"email\":\"admin@borribo.com.kh\",\"id_loan_type\":\"1\"}', NULL, '2022-01-18 19:50:48', '2022-01-18 19:50:48'),
-('ff2e6316-697d-458f-9305-6a9f041631de', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 13, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":\"12\"}', NULL, '2022-02-20 19:36:14', '2022-02-20 19:36:14');
+('ff2e6316-697d-458f-9305-6a9f041631de', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 13, '{\"name\":\"tong say\",\"email\":\"tongsay2019@gmail.com\",\"id_job\":\"12\"}', NULL, '2022-02-20 19:36:14', '2022-02-20 19:36:14'),
+('ff8fe349-b620-4c2c-b11e-89fcef9809b0', 'App\\Notifications\\ApplyJobNotification', 'App\\Models\\ApplyJob', 15, '{\"name\":\"Besy\",\"email\":null,\"id_job\":\"11\"}', NULL, '2022-02-22 18:27:18', '2022-02-22 18:27:18');
 
 -- --------------------------------------------------------
 
@@ -16999,6 +17029,12 @@ ALTER TABLE `media_compliants`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `media_jobs`
+--
+ALTER TABLE `media_jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -17069,19 +17105,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `apply_jobs`
 --
 ALTER TABLE `apply_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `apply_loans`
 --
 ALTER TABLE `apply_loans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `compliants`
 --
 ALTER TABLE `compliants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -17129,13 +17165,19 @@ ALTER TABLE `loan_types`
 -- AUTO_INCREMENT for table `media_compliants`
 --
 ALTER TABLE `media_compliants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT for table `media_jobs`
+--
+ALTER TABLE `media_jobs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `news`
